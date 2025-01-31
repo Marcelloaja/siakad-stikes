@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.inbis.siakad_stikes"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.inbis.siakad_stikes"
