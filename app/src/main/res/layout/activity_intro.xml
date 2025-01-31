@@ -66,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-10dp"
                 android:fontFamily="@font/poppins_light"
-                android:text="sistem informasi akademik"
+                android:text="@string/sub_title_introduction"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
@@ -77,7 +77,7 @@
                 android:fontFamily="@font/poppins_semi_bold"
                 android:gravity="center"
                 android:textColor="@android:color/black"
-                android:text="Kelola kehadiran dan data akademik Anda dengan lebih mudah dan efisien!"
+                android:text="@string/title_introduction"
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
@@ -87,7 +87,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Memulai"
+        android:text="@string/string_memulai"
         android:textColor="#5156BE"
         android:textSize="17sp"
         android:fontFamily="@font/poppins_semi_bold"
