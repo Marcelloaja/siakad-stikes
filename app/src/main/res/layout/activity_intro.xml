@@ -71,6 +71,30 @@
         </LinearLayout>
     </FrameLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Memulai"
+        android:textColor="#5156BE"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins_semi_bold"
+        app:layout_constraintBottom_toBottomOf="@id/btnStart"
+        app:layout_constraintEnd_toEndOf="@id/btnStart"
+        app:layout_constraintStart_toStartOf="@id/btnStart"
+        app:layout_constraintTop_toTopOf="@id/btnStart" />
 
+    <ImageButton
+        android:id="@+id/btnStart"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_margin="36dp"
+        android:background="@drawable/bg_button"
+        android:scaleType="centerInside"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
