@@ -66,7 +66,7 @@
                 android:gravity="center"
                 android:text="Kelola kehadiran dan data akademik Anda dengan lebih mudah dan efisien!"
                 android:textAlignment="center"
-                android:textSize="17sp" />
+                android:textSize="20sp" />
 
         </LinearLayout>
     </FrameLayout>
