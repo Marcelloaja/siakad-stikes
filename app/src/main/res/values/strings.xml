@@ -9,6 +9,8 @@
     <string name="title_introduction">Kelola kehadiran dan data akademik Anda dengan lebih mudah dan efisien!</string>
     <string name="sub_title_introduction">sistem informasi akademik</string>
     <string name="string_memulai">Memulai</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_pass_hint">Password</string>
 
 
 </resources>

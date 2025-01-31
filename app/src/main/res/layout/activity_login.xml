@@ -75,6 +75,44 @@
                 android:textColor="@android:color/black"
                 android:textSize="14sp" />
 
+            <EditText
+                android:id="@+id/loginEmail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/custom_input"
+                android:autofillHints="emailAddress"
+                android:hint="@string/login_email_hint"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_light"
+                android:textColorHint="@android:color/darker_gray"
+                android:inputType="textEmailAddress"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:textSize="15sp"/>
+
+            <EditText
+                android:id="@+id/loginPassword"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/custom_input"
+                android:inputType="textPassword"
+                android:hint="@string/login_pass_hint"
+                android:textColor="@color/black"
+                android:drawableEnd="@drawable/baseline_visibility_24"
+                android:fontFamily="@font/poppins_light"
+                android:textColorHint="@android:color/darker_gray"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:textSize="15sp"/>
+
+
+
         </LinearLayout>
     </FrameLayout>
 
