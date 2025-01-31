@@ -1,6 +1,14 @@
 <resources>
     <string name="app_name">PASPOR STIKES</string>
+    
+    <!--Login Page String-->
+    <string name="login_welcome_bold">Selamat Datang</string>
+    <string name="login_welcome_normal">masukkan data anda di bawah ini</string>
+
+    <!--Intro Page String-->
     <string name="title_introduction">Kelola kehadiran dan data akademik Anda dengan lebih mudah dan efisien!</string>
     <string name="sub_title_introduction">sistem informasi akademik</string>
     <string name="string_memulai">Memulai</string>
+
+
 </resources>
