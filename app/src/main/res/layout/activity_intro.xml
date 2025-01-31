@@ -53,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:fontFamily="@font/poppins_light"
+                android:fontFamily="@font/poppins_medium"
                 android:text="sistem informasi akademik"
                 android:textColor="@android:color/black"
                 android:textSize="14sp" />
@@ -62,12 +62,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:fontFamily="@font/poppins_medium"
+                android:fontFamily="@font/poppins_semi_bold"
                 android:gravity="center"
                 android:text="Kelola kehadiran dan data akademik Anda dengan lebih mudah dan efisien!"
                 android:textAlignment="center"
-                android:textSize="17sp"
-                android:textStyle="bold" />
+                android:textSize="17sp" />
 
         </LinearLayout>
     </FrameLayout>
