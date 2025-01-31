@@ -1,4 +1,4 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#245156BE"/> <!-- Warna #5156BE dengan 12% opacity -->
-    <corners android:radius="10dp"/> <!-- Untuk rounded button -->
+    <solid android:color="#245156BE"/>
+    <corners android:radius="10dp"/>
 </shape>
