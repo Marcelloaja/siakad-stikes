@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">PASPOR STIKES</string>
-    
+
     <!--Login Page String-->
     <string name="login_welcome_bold">Selamat Datang</string>
     <string name="login_welcome_normal">masukkan data anda di bawah ini</string>
