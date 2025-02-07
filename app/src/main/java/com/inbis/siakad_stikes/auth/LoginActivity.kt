@@ -1,12 +1,14 @@
 package com.inbis.siakad_stikes.auth
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
 import android.view.MotionEvent
 import androidx.appcompat.app.AppCompatActivity
 import com.inbis.siakad_stikes.R
 import com.inbis.siakad_stikes.databinding.ActivityLoginBinding
+import com.inbis.siakad_stikes.main.ScanActivity
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -36,6 +38,8 @@ class LoginActivity : AppCompatActivity() {
             }
             false
         }
+
+        login()
     }
 
     private fun togglePasswordVisibility() {
@@ -51,6 +55,14 @@ class LoginActivity : AppCompatActivity() {
 
         isPasswordVisible = !isPasswordVisible
     }
+
+    private fun login() {
+        binding.btnLogin.setOnClickListener {
+            val intent = Intent(this, ScanActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
 
 
 }
