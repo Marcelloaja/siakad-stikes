@@ -5,11 +5,11 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
-    <uses-feature android:name="android.hardware.camera.autofocus"
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
         android:required="false" />
-    <uses-permission android:name="android.permission.CAMERA"/>
 
-
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -21,6 +21,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Siakadstikes"
         tools:targetApi="31">
+        <activity
+            android:name=".main.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".main.RiwayatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".main.JadwalActivity"
+            android:exported="false" />
         <activity
             android:name=".main.ScanActivity"
             android:exported="false" />
