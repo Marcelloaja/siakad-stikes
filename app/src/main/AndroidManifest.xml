@@ -25,7 +25,7 @@
             android:name=".main.ScanActivity"
             android:exported="false" />
         <activity
-            android:name=".auth.LoginActivity"
+            android:name=".SplashScreen"
             android:exported="false" />
         <activity
             android:name=".auth.IntroActivity"
@@ -34,7 +34,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".auth.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
