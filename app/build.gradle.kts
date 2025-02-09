@@ -52,6 +52,9 @@ dependencies {
     implementation(libs.androidx.camera.lifecycle)
     implementation(libs.androidx.camera.view)
 
+    // Extension Dependencies for Scanner
+    implementation(libs.code.scanner)
+
     implementation(libs.mlkit.barcode.scanning)
     implementation(libs.androidx.activity.ktx)
 
