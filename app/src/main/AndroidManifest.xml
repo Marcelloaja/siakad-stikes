@@ -34,8 +34,12 @@
             android:name=".main.JadwalActivity"
             android:exported="false" />
         <activity
+            android:name=".main.CaptureActivityPortrait"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
             android:name=".main.ScanActivity"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".SplashScreen"
             android:exported="false" />
