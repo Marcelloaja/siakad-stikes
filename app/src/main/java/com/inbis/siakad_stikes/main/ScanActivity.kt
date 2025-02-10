@@ -3,6 +3,8 @@ package com.inbis.siakad_stikes.main
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.view.MotionEvent
+import android.view.ScaleGestureDetector
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.Camera
@@ -11,7 +13,6 @@ import androidx.camera.core.CameraSelector
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
-import com.google.android.material.slider.Slider
 import com.inbis.siakad_stikes.databinding.ActivityScanBinding
 import java.util.concurrent.Executors
 
@@ -20,14 +21,13 @@ class ScanActivity : AppCompatActivity() {
     private var camera: Camera? = null
     private lateinit var cameraControl: CameraControl
     private val cameraExecutor = Executors.newSingleThreadExecutor()
+    private lateinit var scaleGestureDetector: ScaleGestureDetector
 
     private val requestPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { isGranted ->
         if (isGranted) {
             startCamera()
-        } else {
-            // Handle permission denied
         }
     }
 
@@ -42,7 +42,7 @@ class ScanActivity : AppCompatActivity() {
             requestPermissionLauncher.launch(Manifest.permission.CAMERA)
         }
 
-        setupZoomSlider()
+        setupPinchToZoom()
     }
 
     private fun allPermissionsGranted() = ContextCompat.checkSelfPermission(
@@ -71,10 +71,19 @@ class ScanActivity : AppCompatActivity() {
         }, ContextCompat.getMainExecutor(this))
     }
 
-    private fun setupZoomSlider() {
-        binding.zoomSlider.addOnChangeListener { _, value, _ ->
-            cameraControl.setZoomRatio(value)
-        }
+    private fun setupPinchToZoom() {
+        scaleGestureDetector = ScaleGestureDetector(this, object : ScaleGestureDetector.SimpleOnScaleGestureListener() {
+            override fun onScale(detector: ScaleGestureDetector): Boolean {
+                val zoomRatio = camera?.cameraInfo?.zoomState?.value?.zoomRatio ?: 1.0f
+                val newZoomRatio = zoomRatio * detector.scaleFactor
+                cameraControl.setZoomRatio(newZoomRatio.coerceIn(1.0f, 10.0f))
+                return true
+            }
+        })
+    }
+
+    override fun onTouchEvent(event: MotionEvent): Boolean {
+        return scaleGestureDetector.onTouchEvent(event) || super.onTouchEvent(event)
     }
 
     override fun onDestroy() {
