@@ -58,6 +58,8 @@ dependencies {
     implementation(libs.mlkit.barcode.scanning)
     implementation(libs.androidx.activity.ktx)
 
+    implementation(libs.circleimageview)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

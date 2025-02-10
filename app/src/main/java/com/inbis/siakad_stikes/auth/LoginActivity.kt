@@ -7,6 +7,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.animation.doOnEnd
+import com.inbis.siakad_stikes.MainActivity
 import com.inbis.siakad_stikes.databinding.ActivityLoginBinding
 import com.inbis.siakad_stikes.main.ScanActivity
 import com.inbis.siakad_stikes.main.ScannerActivity
@@ -42,7 +43,7 @@ class LoginActivity : AppCompatActivity() {
         animatorSet.start()
 
         animatorSet.doOnEnd {
-            val intent = Intent(this, ScannerActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }
