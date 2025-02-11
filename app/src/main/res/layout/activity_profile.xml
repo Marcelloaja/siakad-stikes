@@ -201,33 +201,53 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <LinearLayout-->
-<!--        android:id="@+id/data_button_board"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="15dp"-->
-<!--        android:gravity="center"-->
-<!--        android:orientation="horizontal"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/user_profile_main">-->
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/data_button_board"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="15dp"-->
+    <!--        android:gravity="center"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/user_profile_main">-->
 
-<!--        <ImageButton-->
-<!--            android:id="@+id/btn_data_private"-->
-<!--            android:background="@android:color/transparent"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:contentDescription="@string/data_private_btn"-->
-<!--            android:src="@drawable/btn_pribadi_w" />-->
+    <!--        <ImageButton-->
+    <!--            android:id="@+id/btn_data_private"-->
+    <!--            android:background="@android:color/transparent"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:contentDescription="@string/data_private_btn"-->
+    <!--            android:src="@drawable/btn_pribadi_w" />-->
 
-<!--        <ImageButton-->
-<!--            android:id="@+id/btn_data_academic"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:background="@android:color/transparent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:contentDescription="@string/data_academic_btn"-->
-<!--            android:src="@drawable/btn_akademik_b" />-->
-<!--    </LinearLayout>-->
+    <!--        <ImageButton-->
+    <!--            android:id="@+id/btn_data_academic"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:background="@android:color/transparent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:contentDescription="@string/data_academic_btn"-->
+    <!--            android:src="@drawable/btn_akademik_b" />-->
+    <!--    </LinearLayout>-->
 
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_profile_main"
+        app:tabIndicator="@drawable/tab_indicator"
+        app:tabIndicatorAnimationMode="elastic"
+        app:tabIndicatorColor="@null"
+        app:tabIndicatorGravity="stretch"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/white" />
 
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager2"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tab_layout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

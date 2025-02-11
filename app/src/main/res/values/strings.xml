@@ -24,7 +24,7 @@
     <string name="user_email_text">Email</string>
     <string name="user_semester_text">Semester</string>
     <string name="user_colon">:</string>
-    
+
     <string name="button_notification">Notification Button</string>
     <string name="button_menu">Menu Button</string>
     <string name="button_scan">Scan QR Button</string>
@@ -32,7 +32,7 @@
     <string name="dash_mitra">Mitra Kami</string>
     <string name="rskm_id">Logo RSKM</string>
     <string name="rsud_id">Logo RSUD</string>
-    
+
     <!-- Profile Page String -->
     <string name="button_back_profile">Back Button</string>
     <string name="profile_title">Profile</string>
@@ -48,7 +48,7 @@
     <string name="profile_status_text">STATUS</string>
     <string name="data_private_btn">Private Data Button</string>
     <string name="data_academic_btn">Academic Data Button</string>
-    
+
     <string name="data_email_user">Email</string>
     <string name="data_phone_user">Telepon</string>
     <string name="data_address_user">Alamat</string>
@@ -68,6 +68,8 @@
     <string name="data_major_user_dummy">S1-Ilmu Padi</string>
     <string name="data_entry_year_user_dummy">2022</string>
     <string name="data_total_nilai_user_dummy">350.0</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
