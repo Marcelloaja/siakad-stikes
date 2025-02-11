@@ -1,50 +1,20 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
     tools:context=".main.ScanActivity">
 
-    <androidx.camera.view.PreviewView
-        android:id="@+id/previewView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitCenter"/>
-
-    <TextView
-        android:id="@+id/tvZoomHint"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cubit layar Anda untuk zoom kamera"
-        android:textSize="16sp"
-        android:textColor="@android:color/white"
-        android:background="@android:color/black"
-        android:padding="8dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp"
-        android:layout_alignParentBottom="true"/>
+        android:layout_centerInParent="true"
+        app:lottie_url="https://lottie.host/16caacbf-7691-4beb-8d44-7b73c933c38f/jQF0XybaUS.lottie"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_speed="1.0"
+        tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/tvResult"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textColor="@android:color/white"
-        android:background="@android:color/black"
-        android:padding="8dp"
-        android:gravity="center"
-        android:visibility="gone"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_above="@id/tvZoomHint"/>
-
-    <Button
-        android:id="@+id/btnOpenLink"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Buka Link"
-        android:visibility="gone"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/tvResult"
-        android:layout_marginTop="10dp"/>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
