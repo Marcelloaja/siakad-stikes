@@ -1,9 +1,15 @@
 package com.inbis.siakad_stikes
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.animation.doOnEnd
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.inbis.siakad_stikes.databinding.ActivityMainBinding
@@ -20,30 +26,56 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        enableEdgeToEdge()
         actionButton()
 
     }
 
     private fun actionButton() {
         binding.btnScan.setOnClickListener {
-            val intentScan = Intent(this, ScanActivity::class.java)
-            startActivity(intentScan)
+            val btnScan = binding.btnScan
+            val targetIntent = ScanActivity::class.java
+            animateButton(btnScan, this, targetIntent)
         }
 
         binding.btnProfile.setOnClickListener {
-            val intentProfile = Intent(this, ProfileActivity::class.java)
-            startActivity(intentProfile)
+            val btnProf = binding.btnProfile
+            val targetIntent = ProfileActivity::class.java
+            animateButton(btnProf, this, targetIntent)
         }
 
         binding.btnSchedule.setOnClickListener {
-            val intentSchedule = Intent(this, JadwalActivity::class.java)
-            startActivity(intentSchedule)
+            val btnSchedule = binding.btnSchedule
+            val targetIntent = JadwalActivity::class.java
+            animateButton(btnSchedule, this, targetIntent)
         }
 
         binding.btnHistory.setOnClickListener {
-            val intentHistory = Intent(this, RiwayatActivity::class.java)
-            startActivity(intentHistory)
+            val btnHistory = binding.btnHistory
+            val targetIntent = RiwayatActivity::class.java
+            animateButton(btnHistory, this, targetIntent)
         }
+    }
+
+    private fun animateButton(button : ImageButton, context: Context, targetActivity: Class<out Activity>) {
+        val button = button
+
+        val scaleDownX = ObjectAnimator.ofFloat(button, "scaleX", 0.9f)
+        val scaleDownY = ObjectAnimator.ofFloat(button, "scaleY", 0.9f)
+        val scaleUpX = ObjectAnimator.ofFloat(button, "scaleX", 1f)
+        val scaleUpY = ObjectAnimator.ofFloat(button, "scaleY", 1f)
+
+        val animatorSet = AnimatorSet()
+        animatorSet.play(scaleDownX).with(scaleDownY)
+        animatorSet.play(scaleUpX).with(scaleUpY).after(scaleDownX)
+
+        animatorSet.duration = 150
+        animatorSet.start()
+
+        animatorSet.doOnEnd {
+            val intent = Intent(this, targetActivity)
+            context.startActivity(intent)
+        }
+
     }
 }

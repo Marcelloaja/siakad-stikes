@@ -15,9 +15,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
             android:orientation="horizontal"
             tools:ignore="UselessParent">
 
@@ -40,7 +40,7 @@
                     android:fontFamily="@font/poppins_medium"
                     android:text="@string/data_lecture_wali_user"
                     android:textColor="@color/new_grey"
-                    android:textSize="14sp" />
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -48,7 +48,7 @@
                     android:fontFamily="@font/poppins_semi_bold"
                     android:text="@string/data_lecture_wali_user_dummy"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
@@ -57,17 +57,17 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginEnd="12dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginEnd="17dp"
             android:backgroundTint="@color/new_grey"
             app:cardElevation="5dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="15dp"
             android:orientation="horizontal"
             tools:ignore="UselessParent">
 
@@ -90,7 +90,7 @@
                     android:fontFamily="@font/poppins_medium"
                     android:text="@string/data_major_user"
                     android:textColor="@color/new_grey"
-                    android:textSize="14sp" />
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -98,7 +98,7 @@
                     android:fontFamily="@font/poppins_semi_bold"
                     android:text="@string/data_major_user_dummy"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
@@ -107,17 +107,17 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginEnd="12dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginEnd="17dp"
             android:backgroundTint="@color/new_grey"
             app:cardElevation="5dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="15dp"
             android:orientation="horizontal"
             tools:ignore="UselessParent">
 
@@ -140,7 +140,7 @@
                     android:fontFamily="@font/poppins_medium"
                     android:text="@string/data_entry_year_user"
                     android:textColor="@color/new_grey"
-                    android:textSize="14sp" />
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -148,7 +148,7 @@
                     android:fontFamily="@font/poppins_semi_bold"
                     android:text="@string/data_entry_year_user_dummy"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
@@ -157,17 +157,17 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginEnd="12dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginEnd="17dp"
             android:backgroundTint="@color/new_grey"
             app:cardElevation="5dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="15dp"
             android:orientation="horizontal"
             tools:ignore="UselessParent">
 
@@ -190,7 +190,7 @@
                     android:fontFamily="@font/poppins_medium"
                     android:text="@string/data_total_nilai_user"
                     android:textColor="@color/new_grey"
-                    android:textSize="14sp" />
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -198,7 +198,7 @@
                     android:fontFamily="@font/poppins_semi_bold"
                     android:text="@string/data_total_nilai_user_dummy"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
@@ -207,8 +207,8 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginEnd="12dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginEnd="17dp"
             android:backgroundTint="@color/new_grey"
             app:cardElevation="5dp" />
 

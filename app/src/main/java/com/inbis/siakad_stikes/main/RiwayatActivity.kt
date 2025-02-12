@@ -15,5 +15,6 @@ class RiwayatActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRiwayatBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
     }
 }
