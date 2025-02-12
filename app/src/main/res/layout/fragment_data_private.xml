@@ -43,6 +43,7 @@
                     android:textSize="13sp" />
 
                 <TextView
+                    android:id="@+id/user_collage_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semi_bold"
@@ -93,6 +94,7 @@
                     android:textSize="13sp" />
 
                 <TextView
+                    android:id="@+id/user_phone_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semi_bold"
@@ -143,6 +145,7 @@
                     android:textSize="13sp" />
 
                 <TextView
+                    android:id="@+id/user_address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semi_bold"
@@ -193,6 +196,7 @@
                     android:textSize="13sp" />
 
                 <TextView
+                    android:id="@+id/user_religion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semi_bold"

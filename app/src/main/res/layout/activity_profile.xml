@@ -125,7 +125,7 @@
                 android:id="@+id/user_gpa_profile"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_medium"
+                android:fontFamily="@font/poppins_regular"
                 android:text="@string/profile_user_gpa"
                 android:textAlignment="center"
                 android:textColor="@color/white"
@@ -141,7 +141,7 @@
                 android:id="@+id/user_sks_profile"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_medium"
+                android:fontFamily="@font/poppins_regular"
                 android:text="@string/profile_user_sks"
                 android:textAlignment="center"
                 android:textColor="@color/white"
@@ -157,13 +157,14 @@
                 android:id="@+id/user_status_profile"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_medium"
+                android:fontFamily="@font/poppins_regular"
                 android:text="@string/profile_user_status"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
         </LinearLayout>
     </LinearLayout>
+
 
     <ImageButton
         android:id="@+id/btn_back_profile"
@@ -177,7 +178,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/title_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"

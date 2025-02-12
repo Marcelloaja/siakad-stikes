@@ -10,13 +10,12 @@ import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.animation.doOnEnd
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.inbis.siakad_stikes.databinding.ActivityMainBinding
 import com.inbis.siakad_stikes.main.JadwalActivity
 import com.inbis.siakad_stikes.main.ProfileActivity
 import com.inbis.siakad_stikes.main.RiwayatActivity
 import com.inbis.siakad_stikes.main.ScanActivity
+import com.inbis.siakad_stikes.sidefeatures.NotificationActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -54,6 +53,12 @@ class MainActivity : AppCompatActivity() {
             val btnHistory = binding.btnHistory
             val targetIntent = RiwayatActivity::class.java
             animateButton(btnHistory, this, targetIntent)
+        }
+
+        binding.btnNotification.setOnClickListener {
+            val btnNotif = binding.btnNotification
+            val targetIntent = NotificationActivity::class.java
+            animateButton(btnNotif, this, targetIntent)
         }
     }
 
