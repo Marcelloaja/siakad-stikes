@@ -42,6 +42,7 @@
     <string name="profile_user_gpa">3.95</string>
     <string name="profile_user_sks">104</string>
     <string name="profile_user_status">Aktif</string>
+    <string name="profile_back_button">Back Button Profile</string>
 
     <string name="profile_gpa_text">GPA</string>
     <string name="profile_sks_text">SKS LULUS</string>
@@ -68,9 +69,33 @@
     <string name="data_major_user_dummy">S1-Ilmu Padi</string>
     <string name="data_entry_year_user_dummy">2022</string>
     <string name="data_total_nilai_user_dummy">350.0</string>
+
     <!-- TODO: Remove or change this placeholder text -->
+
+    <!-- Notification Page String -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="notification_title">Notification</string>
+    <string name="notification_back_button">Back Button Notification</string>
+
+
+    <!-- History Page String -->
+    <string name="history_title">Riwayat Pertemuan</string>
+    <string name="history_hadir_value">12/16</string>
+    <string name="history_tidak_hadir_value">02/16</string>
+    <string name="history_sakit_value">02/16</string>
+
+    <string name="history_hadir_text">Hadir</string>
+    <string name="history_tidak_hadir_text">Tidak Hadir</string>
+    <string name="history_sakit_text">Sakit</string>
+
+    <string name="history_informasi_teks">Informasi Pertemuan</string>
+    
+    <string name="history_recycler_pertemuan_text">Pertemuan</string>
+    <string name="history_recycler_tanggal_text">Tanggal</string>
+    <string name="history_recycler_status_text">Status</string>
+
+    <string name="history_back_button">Back Button History</string>
+
 
 
 </resources>
