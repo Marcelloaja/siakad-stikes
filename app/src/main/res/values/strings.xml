@@ -25,7 +25,6 @@
     <string name="user_semester_text">Semester</string>
     <string name="user_colon">:</string>
 
-
     <string name="button_notification">Notification Button</string>
     <string name="button_menu">Menu Button</string>
     <string name="button_scan">Scan QR Button</string>
@@ -33,6 +32,45 @@
     <string name="dash_mitra">Mitra Kami</string>
     <string name="rskm_id">Logo RSKM</string>
     <string name="rsud_id">Logo RSUD</string>
+
+    <!-- Profile Page String -->
+    <string name="button_back_profile">Back Button</string>
+    <string name="profile_title">Profile</string>
+    <string name="button_notification_profile">Notification Button</string>
+    <string name="profile_user_name">Marcello Ilham</string>
+    <string name="profile_user_id">221111029</string>
+    <string name="profile_user_gpa">3.95</string>
+    <string name="profile_user_sks">104</string>
+    <string name="profile_user_status">Aktif</string>
+
+    <string name="profile_gpa_text">GPA</string>
+    <string name="profile_sks_text">SKS LULUS</string>
+    <string name="profile_status_text">STATUS</string>
+    <string name="data_private_btn">Private Data Button</string>
+    <string name="data_academic_btn">Academic Data Button</string>
+
+    <string name="data_email_user">Email</string>
+    <string name="data_phone_user">Telepon</string>
+    <string name="data_address_user">Alamat</string>
+    <string name="data_religion_user">Agama</string>
+
+    <string name="data_email_user_dummy">221111029@mhs.stikes.ac.id</string>
+    <string name="data_phone_user_dummy">081237483990</string>
+    <string name="data_address_user_dummy">Desa Sumbing Barat, Kecamatan London</string>
+    <string name="data_religion_user_dummy">Kristen</string>
+
+    <string name="data_lecture_wali_user">Dosen Wali</string>
+    <string name="data_major_user">Program Studi</string>
+    <string name="data_entry_year_user">Tahun Masuk</string>
+    <string name="data_total_nilai_user">Total Nilai</string>
+
+    <string name="data_lecture_wali_user_dummy">Sukijat, S.Kep., M.Pd</string>
+    <string name="data_major_user_dummy">S1-Ilmu Padi</string>
+    <string name="data_entry_year_user_dummy">2022</string>
+    <string name="data_total_nilai_user_dummy">350.0</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="notification_title">Notification</string>
 
 
 </resources>

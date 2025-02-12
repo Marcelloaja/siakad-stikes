@@ -65,15 +65,15 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation("com.google.android.material:material:1.9.0")
+    implementation(libs.material.v190)
 
-    implementation ("androidx.core:core-ktx:1.14.0") // Turunkan ke versi 1.14.0 atau sebelumnya
-    implementation ("androidx.core:core:1.14.0")
+    implementation (libs.androidx.core.ktx.v1140) // Turunkan ke versi 1.14.0 atau sebelumnya
+    implementation (libs.androidx.core)
 
-    implementation ("com.journeyapps:zxing-android-embedded:4.3.0")
+    implementation (libs.zxing.android.embedded)
 
-    implementation ("androidx.camera:camera-core:1.3.0")
-    implementation ("androidx.camera:camera-camera2:1.3.0")
+    implementation (libs.androidx.camera.core.v130)
+    implementation (libs.androidx.camera.camera2.v130)
     implementation ("androidx.camera:camera-lifecycle:1.3.0")
     implementation ("androidx.camera:camera-view:1.3.0")
 
