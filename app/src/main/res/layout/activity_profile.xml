@@ -5,21 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".main.ProfileActivity">
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardBackgroundColor="@android:color/transparent"
-        app:cardCornerRadius="0dp"
-        app:cardElevation="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:id="@+id/user_profile_main"
@@ -165,7 +151,6 @@
         </LinearLayout>
     </LinearLayout>
 
-
     <ImageButton
         android:id="@+id/btn_back_profile"
         android:layout_width="wrap_content"
@@ -202,31 +187,31 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:id="@+id/btn_data_board"
-            android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/btn_data_board"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/user_profile_main">
+
+        <ImageButton
+            android:id="@+id/btn_data_private"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/user_profile_main">
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/data_private_btn"
+            android:src="@drawable/btn_pribadi_w" />
 
-            <ImageButton
-                android:id="@+id/btn_data_private"
-                android:background="@android:color/transparent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/data_private_btn"
-                android:src="@drawable/btn_pribadi_w" />
-
-            <ImageButton
-                android:id="@+id/btn_data_academic"
-                android:layout_width="wrap_content"
-                android:background="@android:color/transparent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/data_academic_btn"
-                android:src="@drawable/btn_akademik_b" />
-        </LinearLayout>
+        <ImageButton
+            android:id="@+id/btn_data_academic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/data_academic_btn"
+            android:src="@drawable/btn_akademik_b" />
+    </LinearLayout>
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container"

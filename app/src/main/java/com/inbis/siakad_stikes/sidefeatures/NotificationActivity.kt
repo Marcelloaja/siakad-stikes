@@ -17,5 +17,10 @@ class NotificationActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(binding.root)
 
+        binding.btnBackNotification.setOnClickListener {
+            finish()
+        }
     }
+
+
 }
