@@ -36,6 +36,7 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
 }
 
 dependencies {
@@ -77,4 +78,8 @@ dependencies {
     implementation ("androidx.camera:camera-view:1.3.0")
 
     implementation ("com.google.mlkit:barcode-scanning:17.2.0")
+
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+    implementation("androidx.viewpager2:viewpager2:1.0.0")
+    implementation("com.airbnb.android:lottie:6.3.0")
 }
