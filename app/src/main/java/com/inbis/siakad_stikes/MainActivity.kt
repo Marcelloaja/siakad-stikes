@@ -44,8 +44,8 @@ class MainActivity : AppCompatActivity() {
     private fun setupViewPager() {
         val imagePairs = listOf(
             Pair(R.drawable.rskm_image, R.drawable.rsud_image),
-            Pair(R.drawable.ubhinus, R.drawable.rskm_image),
-            Pair(R.drawable.rsud_image, R.drawable.ubhinus)
+            Pair(R.drawable.rsud_image, R.drawable.ubhinus),
+            Pair(R.drawable.ubhinus, R.drawable.rskm_image)
         )
 
         imageAdapter = ImageAdapter(imagePairs)
@@ -100,7 +100,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun animateButton(button : ImageButton, context: Context, targetActivity: Class<out Activity>) {
+    private fun animateButton(
+        button: ImageButton,
+        context: Context,
+        targetActivity: Class<out Activity>,
+    ) {
         val button = button
 
         val scaleDownX = ObjectAnimator.ofFloat(button, "scaleX", 0.9f)

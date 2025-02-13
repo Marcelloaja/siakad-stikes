@@ -16,5 +16,9 @@ class RiwayatActivity : AppCompatActivity() {
         binding = ActivityRiwayatBinding.inflate(layoutInflater)
         setContentView(binding.root)
         enableEdgeToEdge()
+
+        binding.btnBackHistory.setOnClickListener {
+            finish()
+        }
     }
 }
