@@ -32,8 +32,6 @@ class JadwalActivity : AppCompatActivity() {
 
     private fun actionButton() {
         binding.btnBackJadwal.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
             finish()
         }
     }
