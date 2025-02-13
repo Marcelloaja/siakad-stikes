@@ -9,4 +9,9 @@
     <color name="new_green">#D9F6F4</color>
     <color name="new_blue">#CFECFE</color>
     <color name="new_red">#FDE1DD</color>
+
+    <color name="new_purple">#472172</color>
+    <color name="new_purple2">#401D64</color>
+    <color name="new_orange">#F89919</color>
+
 </resources>
