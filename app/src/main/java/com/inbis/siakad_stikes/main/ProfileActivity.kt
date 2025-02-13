@@ -31,8 +31,6 @@ class ProfileActivity : AppCompatActivity() {
 
     private fun actionButton() {
         binding.btnBackProfile.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
             finish()
         }
     }
@@ -40,13 +38,13 @@ class ProfileActivity : AppCompatActivity() {
     private fun showInformation() {
         binding.btnDataPrivate.setOnClickListener {
             goToData(DataPrivateFragment())
-            binding.btnDataPrivate.setImageResource(R.drawable.btn_pribadi_w)
-            binding.btnDataAcademic.setImageResource(R.drawable.btn_akademik_b)
+            binding.btnDataPrivate.setImageResource(R.drawable.btn_pribadi_b)
+            binding.btnDataAcademic.setImageResource(R.drawable.btn_akademik_w)
         }
         binding.btnDataAcademic.setOnClickListener {
             goToData(DataAcademicFragment())
-            binding.btnDataPrivate.setImageResource(R.drawable.btn_pribadi_b)
-            binding.btnDataAcademic.setImageResource(R.drawable.btn_akademik_w)
+            binding.btnDataPrivate.setImageResource(R.drawable.btn_pribadi_w)
+            binding.btnDataAcademic.setImageResource(R.drawable.btn_akademik_b)
         }
     }
 
