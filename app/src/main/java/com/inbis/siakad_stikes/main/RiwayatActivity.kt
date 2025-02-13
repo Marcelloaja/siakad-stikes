@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.inbis.siakad_stikes.databinding.ActivityRiwayatBinding
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import com.inbis.siakad_stikes.Adapter.HistoryAdapter
 import com.inbis.siakad_stikes.Model.HistoryItem
@@ -17,6 +18,7 @@ class RiwayatActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRiwayatBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
 
         binding.btnBackHistory.setOnClickListener {
             finish()
