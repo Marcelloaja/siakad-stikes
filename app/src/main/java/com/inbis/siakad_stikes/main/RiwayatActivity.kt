@@ -3,10 +3,8 @@ package com.inbis.siakad_stikes.main
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.inbis.siakad_stikes.R
 import com.inbis.siakad_stikes.databinding.ActivityRiwayatBinding
+import android.widget.ArrayAdapter
 
 class RiwayatActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRiwayatBinding
@@ -20,5 +18,12 @@ class RiwayatActivity : AppCompatActivity() {
         binding.btnBackHistory.setOnClickListener {
             finish()
         }
+
+        val mataKuliahList = listOf("Pilih Mata Kuliah", "Pemrograman Mobile", "Struktur Data", "Basis Data", "Jaringan Komputer")
+
+        val adapter =
+            ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, mataKuliahList)
+        binding.spinnerMatkul.adapter = adapter
     }
+
 }
