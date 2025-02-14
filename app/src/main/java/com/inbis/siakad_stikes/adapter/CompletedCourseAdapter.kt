@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.inbis.siakad_stikes.databinding.ListCourseCompletedBinding
 import com.inbis.siakad_stikes.model.CompletedData
 
-class CompletedCourseAdapter(private var courseList: List<CompletedData>) : RecyclerView.Adapter<CompletedCourseAdapter.CourseViewHolder>() {
+class CompletedCourseAdapter(private var courseComList: List<CompletedData>) : RecyclerView.Adapter<CompletedCourseAdapter.CourseViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -27,15 +27,10 @@ class CompletedCourseAdapter(private var courseList: List<CompletedData>) : Recy
     }
 
     override fun onBindViewHolder(holder: CompletedCourseAdapter.CourseViewHolder, position: Int) {
-        holder.bind(courseList[position])
+        holder.bind(courseComList[position])
     }
 
     override fun getItemCount(): Int {
-        return courseList.size
-    }
-
-    fun setFilteredList(newList: List<CompletedData>) {
-        courseList = newList
-        notifyDataSetChanged()
+        return courseComList.size
     }
 }

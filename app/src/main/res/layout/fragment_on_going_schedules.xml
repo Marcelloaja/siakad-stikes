@@ -14,12 +14,13 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/jadwal_ongoing_recycler"
-            tools:listitem="@layout/list_course_ongoing"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
             android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"/>
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:paddingBottom="10dp"
+            tools:listitem="@layout/list_course_ongoing" />
 
     </LinearLayout>
 

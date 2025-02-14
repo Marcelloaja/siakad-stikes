@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".main.ProfileActivity">
@@ -162,7 +163,8 @@
         android:paddingTop="20dp"
         android:src="@drawable/baseline_arrow_back_ios_new_36"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/title_profile"
@@ -193,7 +195,8 @@
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:contentDescription="@string/data_private_btn"
-            android:src="@drawable/btn_pribadi_w" />
+            android:src="@drawable/btn_pribadi_b"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <ImageButton
             android:id="@+id/btn_data_academic"
@@ -201,7 +204,8 @@
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:contentDescription="@string/data_academic_btn"
-            android:src="@drawable/btn_akademik_b" />
+            android:src="@drawable/btn_akademik_w"
+            tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
 
     <androidx.fragment.app.FragmentContainerView

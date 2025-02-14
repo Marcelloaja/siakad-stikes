@@ -16,12 +16,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_course_all"
-                android:layout_width="110dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:backgroundTint="@color/new_orange"
@@ -35,7 +36,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_course_mandatory"
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:backgroundTint="@android:color/white"
@@ -49,7 +50,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_course_elective"
-                android:layout_width="110dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:backgroundTint="@android:color/white"
