@@ -1,4 +1,4 @@
-package com.inbis.siakad_stikes.Model
+package com.inbis.siakad_stikes.model
 
 data class HistoryItem(
     val pertemuan: String,

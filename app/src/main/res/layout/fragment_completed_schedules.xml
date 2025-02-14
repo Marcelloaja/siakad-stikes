@@ -21,7 +21,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_course_all"
-                android:layout_width="100dp"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:backgroundTint="@color/new_orange"
@@ -49,7 +49,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_course_elective"
-                android:layout_width="100dp"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:backgroundTint="@android:color/white"
