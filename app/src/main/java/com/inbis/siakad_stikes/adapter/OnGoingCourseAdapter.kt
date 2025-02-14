@@ -1,6 +1,5 @@
 package com.inbis.siakad_stikes.adapter
 
-import android.text.Layout
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -23,7 +22,6 @@ class OnGoingCourseAdapter(private val courseList: List<OnGoingData>) : Recycler
             binding.jadwalCourseLectureCard.text = course.courseLecture
             binding.jadwalCourseRoomCard.text = course.courseRoom
         }
-
     }
 
     override fun onBindViewHolder(holder: OnGoingCourseAdapter.CourseViewHolder, position: Int) {
