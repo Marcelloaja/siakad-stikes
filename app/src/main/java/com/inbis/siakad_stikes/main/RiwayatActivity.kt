@@ -8,8 +8,8 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
-import com.inbis.siakad_stikes.Adapter.HistoryAdapter
-import com.inbis.siakad_stikes.Model.HistoryItem
+import com.inbis.siakad_stikes.adapter.HistoryAdapter
+import com.inbis.siakad_stikes.model.HistoryItem
 
 class RiwayatActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRiwayatBinding

@@ -12,7 +12,7 @@ import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
-import com.inbis.siakad_stikes.Adapter.ImageAdapter
+import com.inbis.siakad_stikes.adapter.ImageAdapter
 import androidx.core.animation.doOnEnd
 import com.inbis.siakad_stikes.databinding.ActivityMainBinding
 import com.inbis.siakad_stikes.main.JadwalActivity

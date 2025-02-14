@@ -1,13 +1,12 @@
-package com.inbis.siakad_stikes.Adapter
+package com.inbis.siakad_stikes.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.inbis.siakad_stikes.Model.HistoryItem
+import com.inbis.siakad_stikes.model.HistoryItem
 import com.inbis.siakad_stikes.R
 
 class HistoryAdapter(

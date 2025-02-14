@@ -1,4 +1,4 @@
-package com.inbis.siakad_stikes.Adapter
+package com.inbis.siakad_stikes.adapter
 
 import android.view.LayoutInflater
 import android.view.View
