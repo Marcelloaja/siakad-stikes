@@ -1,15 +1,11 @@
 package com.inbis.siakad_stikes.main
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.button.MaterialButton
-import com.inbis.siakad_stikes.MainActivity
 import com.inbis.siakad_stikes.R
 import com.inbis.siakad_stikes.databinding.ActivityJadwalBinding
 import com.inbis.siakad_stikes.fragment.CompletedSchedulesFragment
