@@ -29,6 +29,10 @@
         android:text="@string/history_title"
         android:textColor="@color/white"
         android:textSize="20sp"
+        app:autoSizeMaxTextSize="20sp"
+        app:autoSizeMinTextSize="10sp"
+        app:autoSizeStepGranularity="1sp"
+        app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -47,6 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:layout_marginHorizontal="10dp"
             android:orientation="horizontal"
             tools:ignore="UselessLeaf">
 
@@ -66,7 +71,11 @@
                     android:text="@string/history_hadir_value"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    app:autoSizeMaxTextSize="24sp"
+                    app:autoSizeMinTextSize="10sp"
+                    app:autoSizeStepGranularity="1sp"
+                    app:autoSizeTextType="uniform" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -75,7 +84,11 @@
                     android:text="@string/history_hadir_text"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    app:autoSizeMaxTextSize="16sp"
+                    app:autoSizeMinTextSize="10sp"
+                    app:autoSizeStepGranularity="1sp"
+                    app:autoSizeTextType="uniform" />
 
 
             </LinearLayout>
@@ -96,7 +109,11 @@
                     android:text="@string/history_tidak_hadir_value"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    app:autoSizeMaxTextSize="24sp"
+                    app:autoSizeMinTextSize="10sp"
+                    app:autoSizeStepGranularity="1sp"
+                    app:autoSizeTextType="uniform" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -105,7 +122,11 @@
                     android:text="@string/history_tidak_hadir_text"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    app:autoSizeMaxTextSize="16sp"
+                    app:autoSizeMinTextSize="10sp"
+                    app:autoSizeStepGranularity="1sp"
+                    app:autoSizeTextType="uniform" />
 
             </LinearLayout>
 
@@ -125,7 +146,11 @@
                     android:text="@string/history_sakit_value"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    app:autoSizeMaxTextSize="24sp"
+                    app:autoSizeMinTextSize="10sp"
+                    app:autoSizeStepGranularity="1sp"
+                    app:autoSizeTextType="uniform" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -134,7 +159,11 @@
                     android:text="@string/history_sakit_text"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    app:autoSizeMaxTextSize="20sp"
+                    app:autoSizeMinTextSize="10sp"
+                    app:autoSizeStepGranularity="1sp"
+                    app:autoSizeTextType="uniform" />
 
             </LinearLayout>
 
@@ -143,10 +172,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
             android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp">
+            android:layout_marginEnd="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="0dp"
@@ -155,21 +184,28 @@
                 android:fontFamily="@font/poppins_medium"
                 android:text="@string/history_informasi_teks"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                app:autoSizeMaxTextSize="20sp"
+                app:autoSizeMinTextSize="10sp"
+                app:autoSizeStepGranularity="1sp"
+                app:autoSizeTextType="uniform" />
 
             <Spinner
                 android:id="@+id/spinnerMatkul"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_medium" />
+                android:fontFamily="@font/poppins_medium"
+                app:autoSizeMaxTextSize="20sp"
+                app:autoSizeMinTextSize="10sp"
+                app:autoSizeStepGranularity="1sp"
+                app:autoSizeTextType="uniform" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginHorizontal="10dp"
             android:background="@color/new_grey3"
             android:gravity="center"
             android:orientation="horizontal">
@@ -181,7 +217,11 @@
                 android:paddingStart="10dp"
                 android:text="@string/history_recycler_pertemuan_text"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                app:autoSizeMaxTextSize="16sp"
+                app:autoSizeMinTextSize="10sp"
+                app:autoSizeStepGranularity="1sp"
+                app:autoSizeTextType="uniform" />
 
             <TextView
                 android:layout_width="120dp"
@@ -190,7 +230,11 @@
                 android:paddingStart="10dp"
                 android:text="@string/history_recycler_tanggal_text"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                app:autoSizeMaxTextSize="16sp"
+                app:autoSizeMinTextSize="10sp"
+                app:autoSizeStepGranularity="1sp"
+                app:autoSizeTextType="uniform" />
 
             <TextView
                 android:layout_width="120dp"
@@ -199,7 +243,11 @@
                 android:paddingStart="10dp"
                 android:text="@string/history_recycler_status_text"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                app:autoSizeMaxTextSize="16sp"
+                app:autoSizeMinTextSize="10sp"
+                app:autoSizeStepGranularity="1sp"
+                app:autoSizeTextType="uniform" />
 
         </LinearLayout>
 

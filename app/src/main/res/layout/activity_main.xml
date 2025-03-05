@@ -29,6 +29,10 @@
         android:text="@string/dashboard_title"
         android:textColor="@color/white"
         android:textSize="24sp"
+        app:autoSizeMaxTextSize="24sp"
+        app:autoSizeMinTextSize="10sp"
+        app:autoSizeStepGranularity="1sp"
+        app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -105,6 +109,10 @@
                         android:fontFamily="@font/poppins_medium"
                         android:text="@string/user_fullname"
                         android:textColor="@color/black"
+                        app:autoSizeMaxTextSize="20sp"
+                        app:autoSizeMinTextSize="10sp"
+                        app:autoSizeStepGranularity="1sp"
+                        app:autoSizeTextType="uniform"
                         android:textSize="20sp" />
 
                     <TextView
@@ -113,6 +121,10 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_light"
                         android:text="@string/user_major"
+                        app:autoSizeMaxTextSize="15sp"
+                        app:autoSizeMinTextSize="10sp"
+                        app:autoSizeStepGranularity="1sp"
+                        app:autoSizeTextType="uniform"
                         android:textColor="@color/new_grey"
                         android:textSize="15sp" />
 
@@ -139,6 +151,10 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_regular"
                         android:text="@string/user_id_text"
+                        app:autoSizeMaxTextSize="15sp"
+                        app:autoSizeMinTextSize="10sp"
+                        app:autoSizeStepGranularity="1sp"
+                        app:autoSizeTextType="uniform"
                         android:textColor="@color/new_grey"
                         android:textSize="15sp" />
 
@@ -156,6 +172,10 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_regular"
                         android:text="@string/user_id"
+                        app:autoSizeMaxTextSize="15sp"
+                        app:autoSizeMinTextSize="10sp"
+                        app:autoSizeStepGranularity="1sp"
+                        app:autoSizeTextType="uniform"
                         android:textColor="@color/new_grey"
                         android:textSize="15sp" />
                 </LinearLayout>
@@ -173,6 +193,10 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_regular"
                         android:text="@string/user_email_text"
+                        app:autoSizeMaxTextSize="15sp"
+                        app:autoSizeMinTextSize="10sp"
+                        app:autoSizeStepGranularity="1sp"
+                        app:autoSizeTextType="uniform"
                         android:textColor="@color/new_grey"
                         android:textSize="15sp" />
 
@@ -191,6 +215,10 @@
                         android:fontFamily="@font/poppins_regular"
                         android:text="@string/user_email"
                         android:textColor="@color/new_grey"
+                        app:autoSizeMaxTextSize="15sp"
+                        app:autoSizeMinTextSize="10sp"
+                        app:autoSizeStepGranularity="1sp"
+                        app:autoSizeTextType="uniform"
                         android:textSize="15sp" />
 
                 </LinearLayout>
@@ -209,6 +237,10 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_regular"
                         android:text="@string/user_semester_text"
+                        app:autoSizeMaxTextSize="15sp"
+                        app:autoSizeMinTextSize="10sp"
+                        app:autoSizeStepGranularity="1sp"
+                        app:autoSizeTextType="uniform"
                         android:textColor="@color/new_grey"
                         android:textSize="15sp" />
 
@@ -226,6 +258,10 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_regular"
                         android:text="@string/user_semester"
+                        app:autoSizeMaxTextSize="15sp"
+                        app:autoSizeMinTextSize="10sp"
+                        app:autoSizeStepGranularity="1sp"
+                        app:autoSizeTextType="uniform"
                         android:textColor="@color/new_grey"
                         android:textSize="15sp" />
 
@@ -332,6 +368,10 @@
             android:fontFamily="@font/poppins_regular"
             android:gravity="center"
             android:text="@string/dash_mitra"
+            app:autoSizeMaxTextSize="12sp"
+            app:autoSizeMinTextSize="10sp"
+            app:autoSizeStepGranularity="1sp"
+            app:autoSizeTextType="uniform"
             android:layout_marginBottom="5dp"
             android:textColor="@color/new_grey"
             android:textSize="12sp" />

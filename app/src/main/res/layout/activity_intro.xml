@@ -65,6 +65,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-10dp"
+                app:autoSizeMaxTextSize="16sp"
+                app:autoSizeMinTextSize="10sp"
+                app:autoSizeStepGranularity="1sp"
+                app:autoSizeTextType="uniform"
                 android:fontFamily="@font/poppins_light"
                 android:text="@string/sub_title_introduction"
                 android:textColor="@android:color/black"
@@ -79,6 +83,10 @@
                 android:textColor="@android:color/black"
                 android:text="@string/title_introduction"
                 android:textAlignment="center"
+                app:autoSizeMaxTextSize="20sp"
+                app:autoSizeMinTextSize="10sp"
+                app:autoSizeStepGranularity="1sp"
+                app:autoSizeTextType="uniform"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -90,6 +98,10 @@
         android:text="@string/string_memulai"
         android:textColor="#5156BE"
         android:textSize="17sp"
+        app:autoSizeMaxTextSize="17sp"
+        app:autoSizeMinTextSize="10sp"
+        app:autoSizeStepGranularity="1sp"
+        app:autoSizeTextType="uniform"
         android:fontFamily="@font/poppins_semi_bold"
         app:layout_constraintBottom_toBottomOf="@id/btnStart"
         app:layout_constraintEnd_toEndOf="@id/btnStart"
