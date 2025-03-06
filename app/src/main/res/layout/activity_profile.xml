@@ -3,155 +3,133 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_main2"
     tools:context=".main.ProfileActivity">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:id="@+id/user_profile_main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="310dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/gradient_main_color"
+        android:backgroundTint="@color/white"
         android:orientation="vertical"
-        android:paddingTop="20dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/user_image_profile"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="70dp"
-            android:src="@drawable/dummy_face"
-            app:civ_border_color="@color/white"
-            app:civ_border_width="2dp" />
-
-        <TextView
-            android:id="@+id/user_name_profile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="15dp"
-            android:fontFamily="@font/poppins_medium"
-            android:text="@string/profile_user_name"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/user_id_profile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:fontFamily="@font/poppins_regular"
-            android:text="@string/profile_user_id"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_height="match_parent"
             android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_medium"
-                android:text="@string/profile_gpa_text"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+            android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="3dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-                android:orientation="horizontal" />
-
-            <TextView
-                android:layout_width="150dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_medium"
-                android:text="@string/profile_sks_text"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/user_gpa_profile"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/profile_user_gpa"
+                    android:textAlignment="center"
+                    android:textColor="@color/new_brown"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:layout_width="2dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="bottom"
+                    android:background="@color/new_brown"/>
+
+                <TextView
+                    android:id="@+id/user_sks_profile"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/profile_user_sks"
+                    android:textAlignment="center"
+                    android:textColor="@color/new_brown"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:layout_width="2dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="bottom"
+                    android:background="@color/new_brown"/>
+
+                <TextView
+                    android:id="@+id/user_status_profile"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/profile_user_status"
+                    android:textAlignment="center"
+                    android:textColor="@color/new_brown"
+                    android:textSize="20sp" />
+            </LinearLayout>
 
             <LinearLayout
-                android:layout_width="3dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-                android:orientation="horizontal" />
-
-            <TextView
-                android:layout_width="100dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_medium"
-                android:text="@string/profile_status_text"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/profile_gpa_text"
+                    android:textAlignment="center"
+                    android:textColor="@color/new_brown"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="2dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="top"
+                    android:background="@color/new_brown"/>
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/profile_sks_text"
+                    android:textAlignment="center"
+                    android:textColor="@color/new_brown"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="2dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="top"
+                    android:background="@color/new_brown"/>
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/profile_status_text"
+                    android:textAlignment="center"
+                    android:textColor="@color/new_brown"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/user_gpa_profile"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_regular"
-                android:text="@string/profile_user_gpa"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
-            <LinearLayout
-                android:layout_width="3dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-                android:orientation="horizontal" />
-
-            <TextView
-                android:id="@+id/user_sks_profile"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_regular"
-                android:text="@string/profile_user_sks"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
-            <LinearLayout
-                android:layout_width="3dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-                android:orientation="horizontal" />
-
-            <TextView
-                android:id="@+id/user_status_profile"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_regular"
-                android:text="@string/profile_user_status"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-        </LinearLayout>
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
     <ImageButton
         android:id="@+id/btn_back_profile"
@@ -180,42 +158,54 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/btn_data_board"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/user_profile_main">
-
-        <ImageButton
-            android:id="@+id/btn_data_private"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:contentDescription="@string/data_private_btn"
-            android:src="@drawable/btn_pribadi_b"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <ImageButton
-            android:id="@+id/btn_data_academic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:contentDescription="@string/data_academic_btn"
-            android:src="@drawable/btn_akademik_w"
-            tools:ignore="TouchTargetSizeCheck" />
-    </LinearLayout>
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="10dp"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/user_image_profile"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="90dp"
+        android:src="@drawable/dummy_face"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_data_board" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/user_name_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/profile_user_name"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_image_profile" />
+
+    <TextView
+        android:id="@+id/user_id_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/profile_user_id"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_name_profile" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="350dp"
+        android:background="@color/new_grey4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_id_profile" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

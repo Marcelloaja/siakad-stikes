@@ -5,6 +5,7 @@
     <color name="new_grey">#787878</color>
     <color name="new_grey2">#EDEDED</color>
     <color name="new_grey3">#F8F8F8</color>
+    <color name="new_grey4">#F4F4F4</color>
 
     <color name="new_green">#D9F6F4</color>
     <color name="new_blue">#CFECFE</color>
@@ -13,5 +14,6 @@
     <color name="new_purple">#472172</color>
     <color name="new_purple2">#401D64</color>
     <color name="new_orange">#F89919</color>
+    <color name="new_brown">#6B4646</color>
 
 </resources>
