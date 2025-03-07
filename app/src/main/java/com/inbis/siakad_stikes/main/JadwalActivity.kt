@@ -19,8 +19,6 @@ class JadwalActivity : AppCompatActivity() {
         binding = ActivityJadwalBinding.inflate(layoutInflater)
         setContentView(binding.root)
         enableEdgeToEdge()
-
-        showCourseSchedule()
         showCourseInformation(OnGoingSchedulesFragment())
         actionButton()
 
@@ -32,38 +30,10 @@ class JadwalActivity : AppCompatActivity() {
         }
     }
 
-    private fun showCourseSchedule() {
-        binding.btnJadwalOngoing.setOnClickListener {
-            showCourseInformation(OnGoingSchedulesFragment())
-            choiceCourse(binding.btnJadwalOngoing)
-        }
-
-        binding.btnJadwalCompleted.setOnClickListener {
-            showCourseInformation(CompletedSchedulesFragment())
-            choiceCourse(binding.btnJadwalCompleted)
-        }
-    }
-
     private fun showCourseInformation(fragment : Fragment) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.fragment_jadwal_container, fragment)
         fragmentTransaction.commit()
     }
-
-    private fun choiceCourse(choicesButton : MaterialButton) {
-        val button = listOf(binding.btnJadwalOngoing, binding.btnJadwalCompleted)
-
-        button.forEach { button ->
-            if (button == choicesButton) {
-                button.setBackgroundColor(ContextCompat.getColor(this, R.color.white))
-                button.setTextColor(ContextCompat.getColor(this, R.color.black))
-            } else {
-                button.setBackgroundColor(ContextCompat.getColor(this, R.color.new_grey2))
-                button.setTextColor(ContextCompat.getColor(this, R.color.white))
-            }
-        }
-    }
-
-
 }
