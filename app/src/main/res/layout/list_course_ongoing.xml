@@ -15,13 +15,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/new_purple"
+            android:background="@color/new_blue2"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@color/new_purple"
+                android:background="@color/new_blue2"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -42,7 +42,7 @@
                         android:fontFamily="@font/poppins_semi_bold"
                         android:text="@string/jadwal_card_course_hour"
                         android:textAlignment="center"
-                        android:textColor="@color/white"
+                        android:textColor="@color/new_blue3"
                         android:textSize="18sp" />
                 </LinearLayout>
 
@@ -62,7 +62,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@color/new_purple2"
+                android:background="@color/new_blue3"
                 android:gravity="center_vertical"
                 android:orientation="vertical">
 
@@ -96,7 +96,7 @@
                 android:layout_marginEnd="10dp"
                 android:fontFamily="@font/poppins_semi_bold"
                 android:text="@string/jadwal_card_course_room"
-                android:textColor="@color/white"
+                android:textColor="@color/new_blue3"
                 android:textSize="18sp" />
         </LinearLayout>
 

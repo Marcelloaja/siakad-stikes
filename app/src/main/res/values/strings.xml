@@ -105,6 +105,12 @@
     <string name="jadwal_status_mandatory">Wajib</string>
     <string name="jadwal_status_elective">Pilihan</string>
 
+    <string name="jadwal_on_monday">Senin</string>
+    <string name="jadwal_on_tuesday">Selasa</string>
+    <string name="jadwal_on_wednesday">Rabu</string>
+    <string name="jadwal_on_thursday">Kamis</string>
+    <string name="jadwal_on_friday">Jumat</string>
+
     <string name="jadwal_com_course_name">Desain Sawah</string>
     <string name="jadwal_com_course_kode">M1K28OP</string>
     <string name="jadwal_com_course_sifat">Wajib</string>
