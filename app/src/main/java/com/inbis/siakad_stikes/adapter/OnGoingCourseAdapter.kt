@@ -1,16 +1,20 @@
 package com.inbis.siakad_stikes.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.inbis.siakad_stikes.databinding.ListCourseOngoingBinding
 import com.inbis.siakad_stikes.model.OnGoingData
 
-class OnGoingCourseAdapter(private val courseList: List<OnGoingData>) : RecyclerView.Adapter<OnGoingCourseAdapter.CourseViewHolder>() {
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): OnGoingCourseAdapter.CourseViewHolder {
+class OnGoingCourseAdapter(private var courseList: List<OnGoingData>) : RecyclerView.Adapter<OnGoingCourseAdapter.CourseViewHolder>() {
+
+    fun updateData(newCourses: List<OnGoingData>) {
+        courseList = newCourses
+        notifyDataSetChanged()
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CourseViewHolder {
         val binding = ListCourseOngoingBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return CourseViewHolder(binding)
     }
@@ -24,7 +28,7 @@ class OnGoingCourseAdapter(private val courseList: List<OnGoingData>) : Recycler
         }
     }
 
-    override fun onBindViewHolder(holder: OnGoingCourseAdapter.CourseViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
         holder.bind(courseList[position])
     }
 

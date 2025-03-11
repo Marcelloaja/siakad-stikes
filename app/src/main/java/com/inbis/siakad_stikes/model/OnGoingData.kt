@@ -8,5 +8,6 @@ data class OnGoingData(
     val courseName : String,
     val courseLecture : String,
     val courseRoom : String,
+    val courseDay : String,
     val courseHour : String,
 ) : Parcelable
