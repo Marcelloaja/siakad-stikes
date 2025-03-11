@@ -122,5 +122,7 @@
     <string name="jadwal_com_course_sks_text">SKS</string>
     <string name="jadwal_com_course_value_text">Nilai</string>
 
+    <string name="jadwal_jam8">08.00</string>
+
 
 </resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_hours"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="@string/jadwal_jam8"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        android:layout_marginEnd="8dp"
+        app:autoSizeMaxTextSize="20sp"
+        app:autoSizeMinTextSize="10sp"
+        app:autoSizeStepGranularity="1sp"
+        app:autoSizeTextType="uniform"
+        app:cornerRadius="15dp"
+        app:strokeColor="@color/new_grey2"
+        app:strokeWidth="3dp"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>
