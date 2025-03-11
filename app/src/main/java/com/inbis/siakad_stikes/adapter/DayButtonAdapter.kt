@@ -27,13 +27,19 @@ class DayButtonAdapter(private val days: List<DayItemData>, private val onClick:
 
         val context = holder.itemView.context
         if (day.isSelected) {
-            holder.binding.btnDay.setBackgroundTintList(ContextCompat.getColorStateList(context, R.color.new_blue3))
+            holder.binding.btnDay.setBackgroundTintList(
+                ContextCompat.getColorStateList(context, R.color.new_blue3)
+            )
             holder.binding.btnDay.setTextColor(ContextCompat.getColorStateList(context, R.color.white))
+            holder.binding.btnDay.strokeWidth = 0
         } else {
-            holder.binding.btnDay.setBackgroundTintList(ContextCompat.getColorStateList(context, R.color.white))
+            holder.binding.btnDay.setBackgroundTintList(
+                ContextCompat.getColorStateList(context, R.color.white)
+            )
+            holder.binding.btnDay.strokeColor = ContextCompat.getColorStateList(context, R.color.new_grey2)
+            holder.binding.btnDay.strokeWidth = 3
             holder.binding.btnDay.setTextColor(ContextCompat.getColorStateList(context, R.color.black))
         }
-        holder.binding.btnDay.strokeColor = ContextCompat.getColorStateList(context, R.color.new_grey2)
 
         holder.binding.btnDay.setOnClickListener {
             onClick(position)
