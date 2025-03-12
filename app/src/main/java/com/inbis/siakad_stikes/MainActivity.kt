@@ -1,5 +1,6 @@
 package com.inbis.siakad_stikes
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.inbis.siakad_stikes.adapter.HourButtonAdapter
 import com.inbis.siakad_stikes.adapter.OnGoingCourseAdapter
 import com.inbis.siakad_stikes.databinding.ActivityMainBinding
+import com.inbis.siakad_stikes.main.JadwalActivity
 import com.inbis.siakad_stikes.model.HourItemData
 import com.inbis.siakad_stikes.model.OnGoingData
 
@@ -48,7 +50,11 @@ class MainActivity : AppCompatActivity() {
         setupHoursRecyclerView()
         setupOnGoingCourseRecyclerView()
         updateCourses("08:00")
-//        actionButton()
+
+        binding.btnNotification.setOnClickListener {
+            val intent = Intent(this, JadwalActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun setupHoursRecyclerView() {
@@ -66,7 +72,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupOnGoingCourseRecyclerView() {
         binding.jadwalOngoingRecycler.layoutManager = LinearLayoutManager(this)
-        courseAdapter = OnGoingCourseAdapter(emptyList()) // Awalnya kosong
+        courseAdapter = OnGoingCourseAdapter(emptyList())
         binding.jadwalOngoingRecycler.adapter = courseAdapter
     }
 
