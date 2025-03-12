@@ -1,33 +1,43 @@
 package com.inbis.siakad_stikes
 
-import android.animation.AnimatorSet
-import android.animation.ObjectAnimator
-import android.app.Activity
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.widget.ImageButton
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewpager2.widget.ViewPager2
-import com.inbis.siakad_stikes.adapter.ImageAdapter
-import androidx.core.animation.doOnEnd
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.inbis.siakad_stikes.adapter.HourButtonAdapter
+import com.inbis.siakad_stikes.adapter.OnGoingCourseAdapter
 import com.inbis.siakad_stikes.databinding.ActivityMainBinding
-import com.inbis.siakad_stikes.main.JadwalActivity
-import com.inbis.siakad_stikes.main.ProfileActivity
-import com.inbis.siakad_stikes.main.RiwayatActivity
-import com.inbis.siakad_stikes.main.ScanActivity
-import java.util.*
-import com.inbis.siakad_stikes.sidefeatures.NotificationActivity
+import com.inbis.siakad_stikes.model.HourItemData
+import com.inbis.siakad_stikes.model.OnGoingData
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var imageAdapter: ImageAdapter
-    private val handler = Handler(Looper.getMainLooper())
-    private var currentPage = 0
+    private lateinit var hourAdapter: HourButtonAdapter
+    private lateinit var courseAdapter: OnGoingCourseAdapter
+
+    private val hours = listOf(
+        HourItemData("08:00", true),
+        HourItemData("09:00"),
+        HourItemData("10:00"),
+        HourItemData("11:00"),
+        HourItemData("12:00"),
+        HourItemData("13:00"),
+        HourItemData("14:00"),
+        HourItemData("15:00"),
+        HourItemData("16:00")
+    )
+
+    private val allCourses = listOf(
+        OnGoingData("Pemrograman Mobile", "Dr. Adi Nugroho", "Ruang Auditorium", "Senin", "08:00 - 10:00"),
+        OnGoingData("Basis Data", "Dr. Rina Sari", "Ruang Auditorium", "Selasa", "10:00 - 12:00"),
+        OnGoingData("Jaringan Komputer", "Dr. Budi Santoso", "Ruang Auditorium", "Rabu", "13:00 - 15:00"),
+        OnGoingData("Kecerdasan Buatan", "Dr. Siti Rahmah", "Ruang Auditorium", "Kamis", "15:00 - 17:00"),
+        OnGoingData("Basis Data", "Dr. Rina Sari", "Ruang Auditorium", "Jumat", "10:00 - 12:00"),
+        OnGoingData("Jaringan Komputer", "Dr. Budi Santoso", "Ruang Auditorium", "Sabtu", "13:00 - 15:00"),
+        OnGoingData("Kecerdasan Buatan", "Dr. Siti Rahmah", "Ruang Auditorium", "Sabtu", "15:00 - 17:00")
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,94 +45,67 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         enableEdgeToEdge()
 
-        setupViewPager()
-        autoSlideImages()
-        enableEdgeToEdge()
-        actionButton()
+        setupHoursRecyclerView()
+        setupOnGoingCourseRecyclerView()
+        updateCourses("08:00")
+//        actionButton()
     }
 
-    private fun setupViewPager() {
-        val imagePairs = listOf(
-            Pair(R.drawable.rskm_image, R.drawable.rsud_image),
-            Pair(R.drawable.rsud_image, R.drawable.ubhinus),
-            Pair(R.drawable.ubhinus, R.drawable.rskm_image)
-        )
+    private fun setupHoursRecyclerView() {
+        binding.btnHoursRecycler.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
-        imageAdapter = ImageAdapter(imagePairs)
-        binding.imageCarousel.adapter = imageAdapter
-        binding.imageCarousel.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+        hourAdapter = HourButtonAdapter(hours) { position ->
+            val selectedHour = hours[position].hourName
+            hours.forEachIndexed { index, hour -> hour.isSelected = index == position }
+            hourAdapter.notifyDataSetChanged()
+            updateCourses(selectedHour)
+        }
+        binding.btnHoursRecycler.adapter = hourAdapter
     }
 
-    private fun autoSlideImages() {
-        val update = Runnable {
-            if (currentPage == imageAdapter.itemCount) {
-                currentPage = 0
-            }
-            binding.imageCarousel.setCurrentItem(currentPage++, true)
-        }
-
-        Timer().schedule(object : TimerTask() {
-            override fun run() {
-                handler.post(update)
-            }
-        }, 3000, 3000) // Slide otomatis setiap 3 detik
+    private fun setupOnGoingCourseRecyclerView() {
+        binding.jadwalOngoingRecycler.layoutManager = LinearLayoutManager(this)
+        courseAdapter = OnGoingCourseAdapter(emptyList()) // Awalnya kosong
+        binding.jadwalOngoingRecycler.adapter = courseAdapter
     }
 
-    private fun actionButton() {
-        binding.btnScan.setOnClickListener {
-            val btnScan = binding.btnScan
-            val targetIntent = ScanActivity::class.java
-            animateButton(btnScan, this, targetIntent)
-        }
+    private fun updateCourses(selectedHour: String) {
+        val filteredCourses = allCourses.filter { it.courseHour.startsWith(selectedHour) }
+        Log.d("DEBUG", "Jam yang dipilih: $selectedHour, Course yang ditemukan: ${filteredCourses.size}")
 
-        binding.btnProfile.setOnClickListener {
-            val btnProf = binding.btnProfile
-            val targetIntent = ProfileActivity::class.java
-            animateButton(btnProf, this, targetIntent)
-        }
-
-        binding.btnSchedule.setOnClickListener {
-            val btnSchedule = binding.btnSchedule
-            val targetIntent = JadwalActivity::class.java
-            animateButton(btnSchedule, this, targetIntent)
-        }
-
-        binding.btnHistory.setOnClickListener {
-            val btnHistory = binding.btnHistory
-            val targetIntent = RiwayatActivity::class.java
-            animateButton(btnHistory, this, targetIntent)
-        }
-
-        binding.btnNotification.setOnClickListener {
-            val btnNotif = binding.btnNotification
-            val targetIntent = NotificationActivity::class.java
-            animateButton(btnNotif, this, targetIntent)
-        }
+        courseAdapter.updateData(filteredCourses)
     }
 
-    private fun animateButton(
-        button: ImageButton,
-        context: Context,
-        targetActivity: Class<out Activity>,
-    ) {
-        val button = button
-
-        val scaleDownX = ObjectAnimator.ofFloat(button, "scaleX", 0.9f)
-        val scaleDownY = ObjectAnimator.ofFloat(button, "scaleY", 0.9f)
-        val scaleUpX = ObjectAnimator.ofFloat(button, "scaleX", 1f)
-        val scaleUpY = ObjectAnimator.ofFloat(button, "scaleY", 1f)
-
-        val animatorSet = AnimatorSet()
-        animatorSet.play(scaleDownX).with(scaleDownY)
-        animatorSet.play(scaleUpX).with(scaleUpY).after(scaleDownX)
-
-        animatorSet.duration = 150
-        animatorSet.start()
-
-        animatorSet.doOnEnd {
-            val intent = Intent(this, targetActivity)
-            context.startActivity(intent)
-        }
-
-    }
+//    private fun actionButton() {
+//        binding.btnScan.setOnClickListener {
+//            val btnScan = binding.btnScan
+//            val targetIntent = ScanActivity::class.java
+//            animateButton(btnScan, this, targetIntent)
+//        }
+//
+//        binding.btnProfile.setOnClickListener {
+//            val btnProf = binding.btnProfile
+//            val targetIntent = ProfileActivity::class.java
+//            animateButton(btnProf, this, targetIntent)
+//        }
+//
+//        binding.btnSchedule.setOnClickListener {
+//            val btnSchedule = binding.btnSchedule
+//            val targetIntent = JadwalActivity::class.java
+//            animateButton(btnSchedule, this, targetIntent)
+//        }
+//
+//        binding.btnHistory.setOnClickListener {
+//            val btnHistory = binding.btnHistory
+//            val targetIntent = RiwayatActivity::class.java
+//            animateButton(btnHistory, this, targetIntent)
+//        }
+//
+//        binding.btnNotification.setOnClickListener {
+//            val btnNotif = binding.btnNotification
+//            val targetIntent = NotificationActivity::class.java
+//            animateButton(btnNotif, this, targetIntent)
+//        }
+//    }
 }
