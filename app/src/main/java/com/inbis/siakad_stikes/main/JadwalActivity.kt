@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import com.inbis.siakad_stikes.R
 import com.inbis.siakad_stikes.databinding.ActivityJadwalBinding
 import com.inbis.siakad_stikes.fragment.OnGoingSchedulesFragment
+import com.inbis.siakad_stikes.fragment.ProfileFragment
 
 class JadwalActivity : AppCompatActivity() {
     private lateinit var binding: ActivityJadwalBinding
@@ -16,7 +17,7 @@ class JadwalActivity : AppCompatActivity() {
         binding = ActivityJadwalBinding.inflate(layoutInflater)
         setContentView(binding.root)
         enableEdgeToEdge()
-        showCourseInformation(OnGoingSchedulesFragment())
+        showCourseInformation(ProfileFragment())
         actionButton()
 
     }

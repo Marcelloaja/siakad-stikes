@@ -65,6 +65,16 @@
 
     <string name="resume_lesson_name">Penakaran Haji Ahmad dalam Reproduksi Tanaman Dikotil</string>
     <string name="resume_lecture_name">Dr. Sukiman Radjadiningrat</string>
+    
+    <string name="resume_attend_text">Hadir</string>
+    <string name="resume_alpha_text">Alpha</string>
+    <string name="resume_sick_text">Sakit</string>
+    <string name="resume_total_text">Total</string>
+
+    <string name="resume_attend_dummy">9</string>
+    <string name="resume_alpha_dummy">2</string>
+    <string name="resume_sick_dummy">0</string>
+    <string name="resume_total_dummy">11</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 
