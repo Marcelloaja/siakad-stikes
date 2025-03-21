@@ -6,10 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.inbis.siakad_stikes.R
 import com.inbis.siakad_stikes.adapter.ResumeAdapter
 import com.inbis.siakad_stikes.databinding.FragmentProfileBinding
-import com.inbis.siakad_stikes.model.ResumeData
+import com.inbis.siakad_stikes.data.ResumeData
 
 
 class ProfileFragment : Fragment() {

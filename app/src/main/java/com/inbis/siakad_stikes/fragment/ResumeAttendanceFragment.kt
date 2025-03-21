@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.inbis.siakad_stikes.adapter.ResumeAdapter
 import com.inbis.siakad_stikes.databinding.FragmentResumeAttendanceBinding
-import com.inbis.siakad_stikes.model.ResumeData
+import com.inbis.siakad_stikes.data.ResumeData
 
 
 class ResumeAttendanceFragment : Fragment() {

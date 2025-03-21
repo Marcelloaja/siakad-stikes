@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.inbis.siakad_stikes.databinding.ListResumeAttendanceBinding
-import com.inbis.siakad_stikes.model.ResumeData
+import com.inbis.siakad_stikes.data.ResumeData
 
 class ResumeAdapter(private var resumeList: List<ResumeData>) :
     RecyclerView.Adapter<ResumeAdapter.ResumeViewHolder>() {

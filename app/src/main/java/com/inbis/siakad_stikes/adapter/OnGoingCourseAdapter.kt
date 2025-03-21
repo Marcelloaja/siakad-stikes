@@ -1,11 +1,10 @@
 package com.inbis.siakad_stikes.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.inbis.siakad_stikes.databinding.ListCourseOngoingBinding
-import com.inbis.siakad_stikes.model.OnGoingData
+import com.inbis.siakad_stikes.data.OnGoingData
 
 class OnGoingCourseAdapter(private var courseList: List<OnGoingData>) : RecyclerView.Adapter<OnGoingCourseAdapter.CourseViewHolder>() {
 

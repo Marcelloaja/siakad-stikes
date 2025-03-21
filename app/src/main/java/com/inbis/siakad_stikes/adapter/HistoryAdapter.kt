@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.inbis.siakad_stikes.model.HistoryItem
+import com.inbis.siakad_stikes.data.HistoryItem
 import com.inbis.siakad_stikes.R
 
 class HistoryAdapter(

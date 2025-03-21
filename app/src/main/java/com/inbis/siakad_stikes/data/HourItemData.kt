@@ -1,4 +1,4 @@
-package com.inbis.siakad_stikes.model
+package com.inbis.siakad_stikes.data
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
