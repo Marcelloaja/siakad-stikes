@@ -15,7 +15,8 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_weight="2"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
 
         <TextView
             android:layout_width="wrap_content"
@@ -296,7 +297,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/jadwal_ongoing_recycler"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="10dp"
         android:layout_marginTop="5dp"
