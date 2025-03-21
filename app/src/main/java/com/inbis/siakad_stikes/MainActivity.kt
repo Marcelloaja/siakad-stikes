@@ -10,8 +10,8 @@ import com.inbis.siakad_stikes.adapter.HourButtonAdapter
 import com.inbis.siakad_stikes.adapter.OnGoingCourseAdapter
 import com.inbis.siakad_stikes.databinding.ActivityMainBinding
 import com.inbis.siakad_stikes.main.JadwalActivity
-import com.inbis.siakad_stikes.model.HourItemData
-import com.inbis.siakad_stikes.model.OnGoingData
+import com.inbis.siakad_stikes.data.HourItemData
+import com.inbis.siakad_stikes.data.OnGoingData
 
 class MainActivity : AppCompatActivity() {
 

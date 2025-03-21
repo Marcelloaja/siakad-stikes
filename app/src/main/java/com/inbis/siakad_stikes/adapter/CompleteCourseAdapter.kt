@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.inbis.siakad_stikes.databinding.ListCourseCompletedBinding
-import com.inbis.siakad_stikes.model.CompleteData
+import com.inbis.siakad_stikes.data.CompleteData
 
 class CompleteCourseAdapter(private var comCourse: MutableList<CompleteData>) :
     RecyclerView.Adapter<CompleteCourseAdapter.ComViewHolder>() {

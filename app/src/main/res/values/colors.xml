@@ -7,10 +7,13 @@
     <color name="new_grey3">#F8F8F8</color>
     <color name="new_grey4">#F4F4F4</color>
     <color name="new_grey5">#959595</color>
+    
+
 
     <color name="new_green">#D9F6F4</color>
+    <color name="new_green1">#C8EFDC</color>
     <color name="new_blue">#CFECFE</color>
-    <color name="new_blue2">#4BA6EF</color>
+    <color name="new_blue2">#A5D4FA</color>
     <color name="new_blue3">#4F6BCB</color>
     <color name="new_red">#FDE1DD</color>
 

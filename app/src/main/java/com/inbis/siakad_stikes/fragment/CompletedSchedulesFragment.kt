@@ -12,7 +12,7 @@ import com.google.android.material.button.MaterialButton
 import com.inbis.siakad_stikes.R
 import com.inbis.siakad_stikes.adapter.CompleteCourseAdapter
 import com.inbis.siakad_stikes.databinding.FragmentCompletedSchedulesBinding
-import com.inbis.siakad_stikes.model.CompleteData
+import com.inbis.siakad_stikes.data.CompleteData
 
 
 class CompletedSchedulesFragment : Fragment() {
