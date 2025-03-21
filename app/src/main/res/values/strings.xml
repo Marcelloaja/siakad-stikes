@@ -63,18 +63,7 @@
     <string name="data_total_nilai_user_dummy">350.0</string>
     <string name="data_email_collage_user_dummy">221111023@mhs.stikes.ac.id</string>
 
-    <string name="resume_lesson_name">Penakaran Haji Ahmad dalam Reproduksi Tanaman Dikotil</string>
-    <string name="resume_lecture_name">Dr. Sukiman Radjadiningrat</string>
-    
-    <string name="resume_attend_text">Hadir</string>
-    <string name="resume_alpha_text">Alpha</string>
-    <string name="resume_sick_text">Sakit</string>
-    <string name="resume_total_text">Total</string>
 
-    <string name="resume_attend_dummy">9</string>
-    <string name="resume_alpha_dummy">2</string>
-    <string name="resume_sick_dummy">0</string>
-    <string name="resume_total_dummy">11</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 
@@ -136,6 +125,29 @@
     <string name="jadwal_com_course_value_text">Nilai</string>
 
     <string name="jadwal_jam8">08.00</string>
+
+    <!--Resume Fragment Page String-->
+    <string name="resume_title">Ringkasan Kehadiran</string>
+    <string name="resume_semester">Semester 1</string>
+    <string name="resume_lesson_name">Penakaran Haji Ahmad dalam Reproduksi Tanaman Dikotil</string>
+    <string name="resume_lecture_name">Dr. Sukiman Radjadiningrat</string>
+
+    <string name="resume_attend_text">Hadir</string>
+    <string name="resume_alpha_text">Alpha</string>
+    <string name="resume_sick_text">Sakit</string>
+    <string name="resume_total_text">Total</string>
+
+    <string name="resume_attend_dummy">9</string>
+    <string name="resume_alpha_dummy">2</string>
+    <string name="resume_sick_dummy">0</string>
+    <string name="resume_total_dummy">11</string>
+
+    <!-- News Fragment Page String -->
+    <string name="news_page_title">Berita Hari Ini</string>
+    <string name="news_card_writer">Marcello Ilham</string>
+    <string name="news_card_title">Penambahan jadwal kuliah di semester genap 2024/2025</string>
+    <string name="news_card_date">December 08, 2025</string>
+    <string name="news_card_picture">News Picture</string>
 
 
 </resources>

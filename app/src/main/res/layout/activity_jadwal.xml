@@ -11,8 +11,8 @@
 
     <ImageButton
         android:id="@+id/btn_back_jadwal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="12dp"
+        android:layout_height="13dp"
         android:layout_margin="20dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/jadwal_back_button"

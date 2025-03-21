@@ -8,6 +8,7 @@ import com.inbis.siakad_stikes.R
 import com.inbis.siakad_stikes.databinding.ActivityJadwalBinding
 import com.inbis.siakad_stikes.fragment.OnGoingSchedulesFragment
 import com.inbis.siakad_stikes.fragment.ProfileFragment
+import com.inbis.siakad_stikes.fragment.ResumeAttendanceFragment
 
 class JadwalActivity : AppCompatActivity() {
     private lateinit var binding: ActivityJadwalBinding
@@ -17,7 +18,7 @@ class JadwalActivity : AppCompatActivity() {
         binding = ActivityJadwalBinding.inflate(layoutInflater)
         setContentView(binding.root)
         enableEdgeToEdge()
-        showCourseInformation(ProfileFragment())
+        showCourseInformation(ResumeAttendanceFragment())
         actionButton()
 
     }
