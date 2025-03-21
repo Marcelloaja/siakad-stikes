@@ -144,7 +144,10 @@
 
     <!-- News Fragment Page String -->
     <string name="news_page_title">Berita Hari Ini</string>
-    <string name=""
+    <string name="news_card_writer">Marcello Ilham</string>
+    <string name="news_card_title">Penambahan jadwal kuliah di semester genap 2024/2025</string>
+    <string name="news_card_date">December 08, 2025</string>
+    <string name="news_card_picture">News Picture</string>
 
 
 </resources>
