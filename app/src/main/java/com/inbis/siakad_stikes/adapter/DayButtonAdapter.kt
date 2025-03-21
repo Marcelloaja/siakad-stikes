@@ -6,7 +6,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.inbis.siakad_stikes.R
 import com.inbis.siakad_stikes.databinding.ItemDayBinding
-import com.inbis.siakad_stikes.model.DayItemData
+import com.inbis.siakad_stikes.data.DayItemData
 
 class DayButtonAdapter(private val days: List<DayItemData>, private val onClick: (Int) -> Unit) :
     RecyclerView.Adapter<DayButtonAdapter.DayViewHolder>() {

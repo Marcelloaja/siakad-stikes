@@ -37,7 +37,7 @@
             android:textSize="12sp" />
 
         <TextView
-            android:id="@+id/news_tittle"
+            android:id="@+id/news_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semi_bold"

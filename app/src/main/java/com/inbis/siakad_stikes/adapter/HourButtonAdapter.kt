@@ -6,7 +6,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.inbis.siakad_stikes.R
 import com.inbis.siakad_stikes.databinding.ItemHoursBinding
-import com.inbis.siakad_stikes.model.HourItemData
+import com.inbis.siakad_stikes.data.HourItemData
 
 class HourButtonAdapter(private val hours: List<HourItemData>, private val onClick: (Int) -> Unit) :
     RecyclerView.Adapter<HourButtonAdapter.HourViewHolder>() {

@@ -10,8 +10,8 @@ import com.inbis.siakad_stikes.SpaceItemDecoration
 import com.inbis.siakad_stikes.adapter.DayButtonAdapter
 import com.inbis.siakad_stikes.adapter.OnGoingCourseAdapter
 import com.inbis.siakad_stikes.databinding.FragmentOnGoingSchedulesBinding
-import com.inbis.siakad_stikes.model.DayItemData
-import com.inbis.siakad_stikes.model.OnGoingData
+import com.inbis.siakad_stikes.data.DayItemData
+import com.inbis.siakad_stikes.data.OnGoingData
 
 class OnGoingSchedulesFragment : Fragment() {
 
