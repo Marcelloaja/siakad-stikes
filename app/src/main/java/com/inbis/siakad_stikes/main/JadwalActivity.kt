@@ -10,6 +10,7 @@ import com.inbis.siakad_stikes.fragment.NewsFragment
 import com.inbis.siakad_stikes.fragment.OnGoingSchedulesFragment
 import com.inbis.siakad_stikes.fragment.ProfileFragment
 import com.inbis.siakad_stikes.fragment.ResumeAttendanceFragment
+import com.inbis.siakad_stikes.fragment.RiwayatFragment
 
 class JadwalActivity : AppCompatActivity() {
     private lateinit var binding: ActivityJadwalBinding
@@ -19,7 +20,7 @@ class JadwalActivity : AppCompatActivity() {
         binding = ActivityJadwalBinding.inflate(layoutInflater)
         setContentView(binding.root)
         enableEdgeToEdge()
-        showCourseInformation(NewsFragment())
+        showCourseInformation(RiwayatFragment())
         actionButton()
 
     }
