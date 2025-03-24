@@ -64,7 +64,6 @@
     <string name="data_email_collage_user_dummy">221111023@mhs.stikes.ac.id</string>
 
 
-
     <!-- TODO: Remove or change this placeholder text -->
 
     <!-- Notification Page String -->
@@ -75,13 +74,15 @@
 
     <!-- History Page String -->
     <string name="history_title">Riwayat Pertemuan</string>
-    <string name="history_hadir_value">12/16</string>
-    <string name="history_tidak_hadir_value">02/16</string>
-    <string name="history_sakit_value">02/16</string>
+    <string name="history_hadir_value">9</string>
+    <string name="history_tidak_hadir_value">2</string>
+    <string name="history_sakit_value">0</string>
+    <string name="history_total_value">11 / 16</string>
 
     <string name="history_hadir_text">Hadir</string>
-    <string name="history_tidak_hadir_text">Tidak Hadir</string>
+    <string name="history_tidak_hadir_text">Alpha</string>
     <string name="history_sakit_text">Sakit</string>
+    <string name="history_total_text">Total</string>
 
     <string name="history_informasi_teks">Informasi Pertemuan</string>
 
