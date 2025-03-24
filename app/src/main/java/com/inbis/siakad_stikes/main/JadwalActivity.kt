@@ -31,7 +31,7 @@ class JadwalActivity : AppCompatActivity() {
         }
     }
 
-    private fun showCourseInformation(fragment : Fragment) {
+    private fun showCourseInformation(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.fragment_jadwal_container, fragment)

@@ -32,13 +32,43 @@ class MainActivity : AppCompatActivity() {
     )
 
     private val allCourses = listOf(
-        OnGoingData("Pemrograman Mobile", "Dr. Adi Nugroho", "Ruang Auditorium", "Senin", "08:00 - 10:00"),
+        OnGoingData(
+            "Pemrograman Mobile",
+            "Dr. Adi Nugroho",
+            "Ruang Auditorium",
+            "Senin",
+            "08:00 - 10:00"
+        ),
         OnGoingData("Basis Data", "Dr. Rina Sari", "Ruang Auditorium", "Selasa", "10:00 - 12:00"),
-        OnGoingData("Jaringan Komputer", "Dr. Budi Santoso", "Ruang Auditorium", "Rabu", "13:00 - 15:00"),
-        OnGoingData("Kecerdasan Buatan", "Dr. Siti Rahmah", "Ruang Auditorium", "Kamis", "15:00 - 17:00"),
+        OnGoingData(
+            "Jaringan Komputer",
+            "Dr. Budi Santoso",
+            "Ruang Auditorium",
+            "Rabu",
+            "13:00 - 15:00"
+        ),
+        OnGoingData(
+            "Kecerdasan Buatan",
+            "Dr. Siti Rahmah",
+            "Ruang Auditorium",
+            "Kamis",
+            "15:00 - 17:00"
+        ),
         OnGoingData("Basis Data", "Dr. Rina Sari", "Ruang Auditorium", "Jumat", "10:00 - 12:00"),
-        OnGoingData("Jaringan Komputer", "Dr. Budi Santoso", "Ruang Auditorium", "Sabtu", "13:00 - 15:00"),
-        OnGoingData("Kecerdasan Buatan", "Dr. Siti Rahmah", "Ruang Auditorium", "Sabtu", "15:00 - 17:00")
+        OnGoingData(
+            "Jaringan Komputer",
+            "Dr. Budi Santoso",
+            "Ruang Auditorium",
+            "Sabtu",
+            "13:00 - 15:00"
+        ),
+        OnGoingData(
+            "Kecerdasan Buatan",
+            "Dr. Siti Rahmah",
+            "Ruang Auditorium",
+            "Sabtu",
+            "15:00 - 17:00"
+        )
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,7 +108,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateCourses(selectedHour: String) {
         val filteredCourses = allCourses.filter { it.courseHour.startsWith(selectedHour) }
-        Log.d("DEBUG", "Jam yang dipilih: $selectedHour, Course yang ditemukan: ${filteredCourses.size}")
+        Log.d(
+            "DEBUG",
+            "Jam yang dipilih: $selectedHour, Course yang ditemukan: ${filteredCourses.size}"
+        )
 
         courseAdapter.updateData(filteredCourses)
     }
