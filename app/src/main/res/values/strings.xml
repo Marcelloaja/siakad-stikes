@@ -14,12 +14,17 @@
 
     <!-- Dashboard Page String -->
     <string name="dashboard_title">Beranda</string>
+    <string name="dashboard_welcome">Selamat Datang!</string>
+    <string name="dashboard_upcoming_schedules">Jadwal yang akan datang</string>
+    <string name="dashboard_list_resume">Ringkasan Kehadiran</string>
+    <string name="dashboard_news_now">Berita Hari Ini</string>
+    <string name="dashboard_lainnya">Lainnya</string>
     <string name="user_fullname">Marcello Ilham</string>
     <string name="user_major">S1 - Informatika</string>
     <string name="user_id">221111029</string>
     <string name="user_email">221111029@mhs.stiki.ac.id</string>
     <string name="user_semester">5</string>
-
+    
     <string name="user_id_text">NRP</string>
     <string name="user_email_text">Email</string>
     <string name="user_semester_text">Semester</string>
