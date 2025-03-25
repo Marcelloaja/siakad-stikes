@@ -76,8 +76,6 @@
                     app:autoSizeMinTextSize="10sp"
                     app:autoSizeStepGranularity="1sp"
                     app:autoSizeTextType="uniform" />
-
-
             </LinearLayout>
 
             <LinearLayout
@@ -285,6 +283,4 @@
             tools:listitem="@layout/list_history_item" />
 
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
