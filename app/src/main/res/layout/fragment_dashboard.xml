@@ -86,50 +86,18 @@
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/dashboard_schedules_upcoming"
-            android:layout_width="370dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="5dp"
-            android:orientation="vertical"
-            android:background="@drawable/custom_linear_rounded"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/dash_card_bg"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/course_hour_custom_field"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginEnd="10dp"
-                        android:fontFamily="@font/poppins_semi_bold"
-                        android:text="@string/jadwal_card_course_hour"
-                        android:textAlignment="center"
-                        android:textColor="@color/new_blue3"
-                        android:textSize="15sp"/>
-
-                </LinearLayout>
 
 
-
-            </LinearLayout>
-
-        </LinearLayout>
+        </androidx.recyclerview.widget.RecyclerView>
 
 
         <TextView

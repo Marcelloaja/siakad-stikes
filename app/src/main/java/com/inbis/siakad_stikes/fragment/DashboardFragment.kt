@@ -7,9 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.inbis.siakad_stikes.R
+import com.inbis.siakad_stikes.adapter.DashSchedulesAdapter
 import com.inbis.siakad_stikes.adapter.NewsAdapter
 import com.inbis.siakad_stikes.adapter.ResumeAdapter
 import com.inbis.siakad_stikes.data.NewsData
+import com.inbis.siakad_stikes.data.OnGoingData
 import com.inbis.siakad_stikes.data.ResumeData
 import com.inbis.siakad_stikes.databinding.FragmentDashboardBinding
 
@@ -20,6 +22,7 @@ class DashboardFragment : Fragment() {
 
     private lateinit var newsAdapter: NewsAdapter
     private lateinit var resumeAdapter: ResumeAdapter
+    private lateinit var dashSchedulesAdapter: DashSchedulesAdapter
 
     private val newsAll = listOf(
         NewsData("Dr. Sutomo", "Pencairan uang asisten dosen 2024", "03 Januari, 2025"),
@@ -73,6 +76,13 @@ class DashboardFragment : Fragment() {
         ResumeData("Sistem Pengembangan Bisnis Gelap", "Dr. Sukijat, M.MT", 16, 1, 1, 16),
     )
 
+    private val allDashCourse = listOf(
+        OnGoingData("Pemrograman Mobile Pemrograman Mobile Pemrograman Mobile", "Dr. Adi Nugroho", "Ruang Auditorium", "Senin", "08:00 - 10:00"),
+        OnGoingData("Basis Data", "Dr. Rina Sari", "Ruang Auditorium", "Selasa", "10:00 - 12:00"),
+        OnGoingData("Jaringan Komputer", "Dr. Budi Santoso", "Ruang Auditorium", "Rabu", "13:00 - 15:00"),
+        OnGoingData("Kecerdasan Buatan", "Dr. Siti Rahmah", "Ruang Auditorium", "Kamis", "15:00 - 17:00"),
+    )
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -86,8 +96,17 @@ class DashboardFragment : Fragment() {
 
         setupNewsRecycler()
         setupAttendanceRecycler()
+        setupDashSchedulesRecycler()
 
 
+    }
+
+    private fun setupDashSchedulesRecycler() {
+        dashSchedulesAdapter = DashSchedulesAdapter(allDashCourse)
+        binding.dashboardSchedulesUpcoming.apply {
+            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            adapter = dashSchedulesAdapter
+        }
     }
 
     private fun setupAttendanceRecycler() {
