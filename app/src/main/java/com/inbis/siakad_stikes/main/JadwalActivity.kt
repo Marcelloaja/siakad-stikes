@@ -21,7 +21,7 @@ class JadwalActivity : AppCompatActivity() {
         binding = ActivityJadwalBinding.inflate(layoutInflater)
         setContentView(binding.root)
         enableEdgeToEdge()
-        showCourseInformation(RiwayatFragment())
+        showCourseInformation(DashboardFragment())
         actionButton()
 
     }
