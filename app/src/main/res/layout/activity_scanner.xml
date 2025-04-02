@@ -11,7 +11,6 @@
         android:id="@+id/scannerBarcode"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="16dp"
         app:autoFocusButtonColor="@android:color/white"
         app:autoFocusButtonVisible="true"
         app:flashButtonColor="@android:color/white"
@@ -40,21 +39,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <ImageButton
-            android:id="@+id/btnZoomIn"
+        <TextView
+            android:id="@+id/zoomLevelText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/baseline_zoom_in_24"
-            android:layout_margin="10dp"
-            android:background="@android:color/transparent"/>
+            android:text="Zoom: 1x"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:layout_margin="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
 
-        <ImageButton
-            android:id="@+id/btnZoomOut"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/baseline_zoom_out_24"
-            android:layout_margin="10dp"
-            android:background="@android:color/transparent"/>
+<!--        <ImageButton-->
+<!--            android:id="@+id/btnZoomIn"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/baseline_zoom_in_24"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:background="@android:color/transparent"/>-->
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/btnZoomOut"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/baseline_zoom_out_24"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:background="@android:color/transparent"/>-->
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

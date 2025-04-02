@@ -83,4 +83,6 @@ dependencies {
     implementation("de.hdodenhof:circleimageview:3.1.0")
     implementation("androidx.viewpager2:viewpager2:1.0.0")
     implementation("com.airbnb.android:lottie:6.3.0")
+
+    implementation("com.google.android.material:material:1.9.0")
 }

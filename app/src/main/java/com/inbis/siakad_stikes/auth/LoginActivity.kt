@@ -5,13 +5,13 @@ import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Patterns
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.animation.doOnEnd
 import com.inbis.siakad_stikes.MainActivity
 import com.inbis.siakad_stikes.databinding.ActivityLoginBinding
-import com.inbis.siakad_stikes.main.ScanActivity
-import com.inbis.siakad_stikes.main.ScannerActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -24,8 +24,25 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
         enableEdgeToEdge()
 
+        // Data dummy untuk email dan password
+        binding.etEmail.setText("admin@gmail.com")
+        binding.etPassword.setText("admin")
+
         binding.btnLogin.setOnClickListener {
-            animateButtonAndNavigate()
+            val email = binding.etEmail.text.toString().trim()
+            val password = binding.etPassword.text.toString().trim()
+
+            // Validasi email
+            if (isValidEmail(email)) {
+                // Cek jika password juga sesuai
+                if (password == "admin") {
+                    animateButtonAndNavigate()
+                } else {
+                    Toast.makeText(this, "Password salah", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                Toast.makeText(this, "Email tidak valid", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -50,4 +67,8 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    // Fungsi untuk memvalidasi email
+    private fun isValidEmail(email: String): Boolean {
+        return Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
 }

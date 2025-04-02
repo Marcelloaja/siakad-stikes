@@ -1,15 +1,21 @@
 package com.inbis.siakad_stikes.fragment
 
+import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.PopupMenu
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.inbis.siakad_stikes.R
 import com.inbis.siakad_stikes.adapter.DashSchedulesAdapter
 import com.inbis.siakad_stikes.adapter.NewsAdapter
 import com.inbis.siakad_stikes.adapter.ResumeAdapter
+import com.inbis.siakad_stikes.auth.IntroActivity
+import com.inbis.siakad_stikes.auth.LoginActivity
 import com.inbis.siakad_stikes.data.NewsData
 import com.inbis.siakad_stikes.data.OnGoingData
 import com.inbis.siakad_stikes.data.ResumeData
@@ -94,11 +100,25 @@ class DashboardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.dashImageUser.setOnClickListener { view ->
+            val popup = PopupMenu(requireContext(), view)
+            popup.menuInflater.inflate(R.menu.menu_logout, popup.menu)
+
+            popup.setOnMenuItemClickListener { item ->
+                when (item.itemId) {
+                    R.id.menu_logout -> {
+                        showLogoutConfirmation()
+                        true
+                    }
+                    else -> false
+                }
+            }
+            popup.show()
+        }
+
         setupNewsRecycler()
         setupAttendanceRecycler()
         setupDashSchedulesRecycler()
-
-
     }
 
     private fun setupDashSchedulesRecycler() {
@@ -124,6 +144,27 @@ class DashboardFragment : Fragment() {
             adapter = newsAdapter
         }
     }
+
+    private fun showLogoutConfirmation() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setTitle("Konfirmasi Logout")
+        builder.setMessage("Anda yakin keluar dari akun ini?")
+
+        builder.setPositiveButton("Ya") { _, _ ->
+            Toast.makeText(requireContext(), "Logout berhasil!", Toast.LENGTH_SHORT).show()
+            val intent = Intent(requireContext(), IntroActivity::class.java)
+            startActivity(intent)
+            requireActivity().finish()
+        }
+
+        builder.setNegativeButton("Tidak") { dialog, _ ->
+            dialog.dismiss()
+        }
+
+        val dialog = builder.create()
+        dialog.show()
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
