@@ -11,6 +11,7 @@ import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.inbis.siakad_stikes.R
+import com.inbis.siakad_stikes.SpaceItemDecoration
 import com.inbis.siakad_stikes.adapter.DashSchedulesAdapter
 import com.inbis.siakad_stikes.adapter.NewsAdapter
 import com.inbis.siakad_stikes.adapter.ResumeAdapter
@@ -72,8 +73,22 @@ class DashboardFragment : Fragment() {
     )
 
     private val resumePageAll = listOf(
-        ResumeData("Pengadaan Tanggulangan Kesehatan Masyarakat", "Dr. Indra Wijaya, M.Ps", 10, 3, 2, 10),
-        ResumeData("Intensifitas Kadar Gula Pada Harimau Malaya", "Suparto, S.Pt, M.U.I", 8, 1, 1, 8),
+        ResumeData(
+            "Pengadaan Tanggulangan Kesehatan Masyarakat",
+            "Dr. Indra Wijaya, M.Ps",
+            10,
+            3,
+            2,
+            10
+        ),
+        ResumeData(
+            "Intensifitas Kadar Gula Pada Harimau Malaya",
+            "Suparto, S.Pt, M.U.I",
+            8,
+            1,
+            1,
+            8
+        ),
         ResumeData("Penyaringan Infus Janin Dengan Selang", "Dr. Tirta M.Pd", 12, 1, 2, 12),
         ResumeData("Rekayasa Agama", "Dr. Ustadz Haji Salim", 11, 2, 2, 11),
         ResumeData("Pergantian Zaman dengan Metode Hijrah", "Dr. Freeze", 14, 1, 1, 14),
@@ -83,15 +98,33 @@ class DashboardFragment : Fragment() {
     )
 
     private val allDashCourse = listOf(
-        OnGoingData("Pemrograman Mobile Pemrograman Mobile Pemrograman Mobile", "Dr. Adi Nugroho", "Ruang Auditorium", "Senin", "08:00 - 10:00"),
+        OnGoingData(
+            "Pemrograman Mobile",
+            "Dr. Adi Nugroho",
+            "Ruang Auditorium",
+            "Senin",
+            "08:00 - 10:00"
+        ),
         OnGoingData("Basis Data", "Dr. Rina Sari", "Ruang Auditorium", "Selasa", "10:00 - 12:00"),
-        OnGoingData("Jaringan Komputer", "Dr. Budi Santoso", "Ruang Auditorium", "Rabu", "13:00 - 15:00"),
-        OnGoingData("Kecerdasan Buatan", "Dr. Siti Rahmah", "Ruang Auditorium", "Kamis", "15:00 - 17:00"),
+        OnGoingData(
+            "Jaringan Komputer",
+            "Dr. Budi Santoso",
+            "Ruang Auditorium",
+            "Rabu",
+            "13:00 - 15:00"
+        ),
+        OnGoingData(
+            "Kecerdasan Buatan",
+            "Dr. Siti Rahmah",
+            "Ruang Auditorium",
+            "Kamis",
+            "15:00 - 17:00"
+        ),
     )
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         return binding.root
@@ -124,8 +157,13 @@ class DashboardFragment : Fragment() {
     private fun setupDashSchedulesRecycler() {
         dashSchedulesAdapter = DashSchedulesAdapter(allDashCourse)
         binding.dashboardSchedulesUpcoming.apply {
+
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            isNestedScrollingEnabled = false
             adapter = dashSchedulesAdapter
+
+            val spaceDecoration = SpaceItemDecoration(15)
+            addItemDecoration(spaceDecoration)
         }
     }
 
@@ -165,11 +203,8 @@ class DashboardFragment : Fragment() {
         dialog.show()
     }
 
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
-
 }

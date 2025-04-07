@@ -73,7 +73,6 @@
             android:textColor="@color/black"
             android:textSize="18sp" />
 
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/dashboard_schedules_upcoming"
             android:layout_width="match_parent"
@@ -148,7 +147,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:layout_marginBottom="140dp"/>
+            android:layout_marginBottom="140dp" />
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
