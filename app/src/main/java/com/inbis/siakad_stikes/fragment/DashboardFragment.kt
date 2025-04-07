@@ -191,17 +191,17 @@ class DashboardFragment : Fragment() {
         builder.setPositiveButton("Ya") { _, _ ->
             Toast.makeText(requireContext(), "Logout berhasil!", Toast.LENGTH_SHORT).show()
             val intent = Intent(requireContext(), IntroActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
-            requireActivity().finish()
         }
 
-        builder.setNegativeButton("Tidak") { dialog, _ ->
+        builder.setNegativeButton("Batal") { dialog, _ ->
             dialog.dismiss()
         }
 
-        val dialog = builder.create()
-        dialog.show()
+        builder.show()
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
