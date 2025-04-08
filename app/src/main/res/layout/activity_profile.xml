@@ -297,54 +297,46 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/poppins_light"
                             android:text="@string/data_lecture_wali_user_dummy"
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/black" />
 
                         <TextView
                             android:id="@+id/user_data_major"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins_light"
                             android:layout_marginTop="2dp"
+                            android:fontFamily="@font/poppins_light"
                             android:text="@string/data_major_user_dummy"
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/black" />
 
                         <TextView
                             android:id="@+id/user_data_entry_year"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins_light"
                             android:layout_marginTop="2dp"
+                            android:fontFamily="@font/poppins_light"
                             android:text="@string/data_entry_year_user_dummy"
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/black" />
 
                         <TextView
                             android:id="@+id/user_data_total_value"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins_light"
                             android:layout_marginTop="2dp"
+                            android:fontFamily="@font/poppins_light"
                             android:text="@string/data_total_nilai_user_dummy"
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/black" />
 
                         <TextView
                             android:id="@+id/user_data_email_collage"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins_light"
                             android:layout_marginTop="2dp"
+                            android:fontFamily="@font/poppins_light"
                             android:text="@string/data_email_collage_user_dummy"
-                            android:textColor="@color/black"/>
-
+                            android:textColor="@color/black" />
                     </LinearLayout>
-
                 </LinearLayout>
-
             </LinearLayout>
-
-
         </androidx.cardview.widget.CardView>
-
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
