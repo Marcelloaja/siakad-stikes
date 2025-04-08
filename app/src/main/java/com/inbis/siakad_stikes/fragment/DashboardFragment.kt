@@ -4,6 +4,8 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,6 +35,7 @@ import java.time.LocalDate
 import java.time.LocalTime
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
+import java.util.Locale
 
 class DashboardFragment : Fragment() {
 
@@ -43,6 +46,9 @@ class DashboardFragment : Fragment() {
     private lateinit var resumeAdapter: ResumeAdapter
     private lateinit var dashSchedulesAdapter: DashSchedulesAdapter
     private lateinit var indicatorLayout: LinearLayout
+    private lateinit var refreshHandler: Handler
+    private lateinit var refreshRunnable: Runnable
+    private val handler = Handler(Looper.getMainLooper())
 
     private val newsAll = listOf(
         NewsData("Dr. Sutomo", "Pencairan uang asisten dosen 2024", "03 Januari, 2025"),
@@ -169,7 +175,20 @@ class DashboardFragment : Fragment() {
 
         setupNewsRecycler()
         setupAttendanceRecycler()
-        setupDashSchedulesRecycler()
+        startAutoRefresh()
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun startAutoRefresh() {
+        refreshRunnable = Runnable {
+            setupDashSchedulesRecycler()
+            handler.postDelayed(refreshRunnable, 60000) // 60 detik refresh
+        }
+        handler.post(refreshRunnable)
+    }
+
+    private fun stopAutoRefresh() {
+        handler.removeCallbacks(refreshRunnable)
     }
 
     private fun setupNewsRecycler() {
@@ -196,97 +215,120 @@ class DashboardFragment : Fragment() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun setupDashSchedulesRecycler() {
-        val today = LocalDate.now().dayOfWeek
-        val todayNameEnglish = today.name.lowercase().replaceFirstChar { it.uppercase() }
+        refreshHandler = Handler(Looper.getMainLooper())
+        refreshRunnable = object : Runnable {
+            override fun run() {
+                val today = LocalDate.now().dayOfWeek
+                val todayNameEnglish = today.name.lowercase().replaceFirstChar { it.uppercase() }
 
-        val todayNameIndonesian = when (today) {
-            DayOfWeek.MONDAY -> "Senin"
-            DayOfWeek.TUESDAY -> "Selasa"
-            DayOfWeek.WEDNESDAY -> "Rabu"
-            DayOfWeek.THURSDAY -> "Kamis"
-            DayOfWeek.FRIDAY -> "Jumat"
-            DayOfWeek.SATURDAY -> "Sabtu"
-            DayOfWeek.SUNDAY -> "Minggu"
-        }
-
-        val currentTime = LocalTime.now(ZoneId.of("Asia/Jakarta"))
-
-        val todayCourses = allDashCourse.filter {
-            it.courseDay.equals(todayNameEnglish, ignoreCase = true) ||
-                    it.courseDay.equals(todayNameIndonesian, ignoreCase = true)
-        }
-
-        val sortedTodayCourses = todayCourses.sortedBy { course ->
-            val timeRange = course.courseHour.split("-")
-            if (timeRange.size == 2) {
-                LocalTime.parse(timeRange[0].trim().replace(".", ":"))
-            } else {
-                LocalTime.MAX
-            }
-        }
-
-        val ongoingCourses = sortedTodayCourses.filter { course ->
-            val timeRange = course.courseHour.split("-")
-            if (timeRange.size == 2) {
-                val startTime = LocalTime.parse(timeRange[0].trim().replace(".", ":"))
-                val endTime = LocalTime.parse(timeRange[1].trim().replace(".", ":"))
-
-                val oneHourBefore = currentTime.minusHours(1)
-                (currentTime.isAfter(startTime) && currentTime.isBefore(endTime)) ||
-                        (oneHourBefore.isAfter(startTime) && currentTime.isBefore(endTime))
-            } else {
-                false
-            }
-        }
-
-        val upcomingCourses = sortedTodayCourses.filter { course ->
-            val timeRange = course.courseHour.split("-")
-            if (timeRange.size == 2) {
-                val startTime = LocalTime.parse(timeRange[0].trim().replace(".", ":"))
-                currentTime.isBefore(startTime)
-            } else {
-                false
-            }
-        }
-
-        val displayCourses = mutableListOf<OnGoingData>()
-
-        if (ongoingCourses.isNotEmpty()) {
-            displayCourses.addAll(ongoingCourses)
-        } else {
-            displayCourses.add(
-                OnGoingData(
-                    courseName = "Tidak ada course yang sedang berlangsung",
-                    courseLecture = "",
-                    courseRoom = "",
-                    courseDay = todayNameIndonesian,
-                    courseHour = currentTime.format(DateTimeFormatter.ofPattern("HH:mm"))
-                )
-            )
-        }
-
-        displayCourses.addAll(upcomingCourses)
-
-        dashSchedulesAdapter = DashSchedulesAdapter(displayCourses)
-
-        binding.dashboardSchedulesUpcoming.apply {
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-            adapter = dashSchedulesAdapter
-            itemAnimator = DefaultItemAnimator()
-            val snapHelper = PagerSnapHelper()
-            snapHelper.attachToRecyclerView(this)
-            addItemDecoration(SpaceItemDecoration(30))
-
-            setupIndicators(dashSchedulesAdapter.itemCount)
-            setCurrentIndicator(0)
-
-            addOnScrollListener(object : RecyclerView.OnScrollListener() {
-                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                    val layoutManager = recyclerView.layoutManager as LinearLayoutManager
-                    val position = layoutManager.findFirstVisibleItemPosition()
-                    setCurrentIndicator(position)
+                val todayNameIndonesian = when (today) {
+                    DayOfWeek.MONDAY -> "Senin"
+                    DayOfWeek.TUESDAY -> "Selasa"
+                    DayOfWeek.WEDNESDAY -> "Rabu"
+                    DayOfWeek.THURSDAY -> "Kamis"
+                    DayOfWeek.FRIDAY -> "Jumat"
+                    DayOfWeek.SATURDAY -> "Sabtu"
+                    DayOfWeek.SUNDAY -> "Minggu"
                 }
-            })
+
+                val currentTime = LocalTime.now(ZoneId.of("Asia/Jakarta"))
+
+                val todayCourses = allDashCourse.filter {
+                    it.courseDay.equals(todayNameEnglish, ignoreCase = true) ||
+                            it.courseDay.equals(todayNameIndonesian, ignoreCase = true)
+                }
+
+                val sortedTodayCourses = todayCourses.sortedBy { course ->
+                    val timeRange = course.courseHour.split("-")
+                    if (timeRange.size == 2) {
+                        LocalTime.parse(timeRange[0].trim().replace(".", ":"))
+                    } else {
+                        LocalTime.MAX
+                    }
+                }
+
+                val ongoingCourses = sortedTodayCourses.filter { course ->
+                    val timeRange = course.courseHour.split("-")
+                    if (timeRange.size == 2) {
+                        val startTime = LocalTime.parse(timeRange[0].trim().replace(".", ":"))
+                        val endTime = LocalTime.parse(timeRange[1].trim().replace(".", ":"))
+
+                        val oneHourBefore = currentTime.minusHours(1)
+                        (currentTime.isAfter(startTime) && currentTime.isBefore(endTime)) ||
+                                (oneHourBefore.isAfter(startTime) && currentTime.isBefore(endTime))
+                    } else {
+                        false
+                    }
+                }
+
+                val upcomingCourses = sortedTodayCourses.filter { course ->
+                    val timeRange = course.courseHour.split("-")
+                    if (timeRange.size == 2) {
+                        val startTime = LocalTime.parse(timeRange[0].trim().replace(".", ":"))
+                        currentTime.isBefore(startTime)
+                    } else {
+                        false
+                    }
+                }
+
+                val displayCourses = mutableListOf<OnGoingData>()
+
+                if (ongoingCourses.isNotEmpty()) {
+                    displayCourses.addAll(ongoingCourses)
+                } else {
+                    displayCourses.add(
+                        OnGoingData(
+                            courseName = "Tidak ada course yang sedang berlangsung",
+                            courseLecture = "Hari : $todayNameIndonesian, ${LocalDate.now().format(DateTimeFormatter.ofPattern("d MMMM yyyy", Locale("id", "ID")))}",
+                            courseRoom = "",
+                            courseDay = todayNameIndonesian,
+                            courseHour = currentTime.format(DateTimeFormatter.ofPattern("HH:mm"))
+                        )
+                    )
+                }
+
+                displayCourses.addAll(upcomingCourses)
+
+                // Kalau adapter sudah ada, update datanya aja, jangan buat baru
+                if (::dashSchedulesAdapter.isInitialized) {
+                    dashSchedulesAdapter.updateData(displayCourses)
+                } else {
+                    dashSchedulesAdapter = DashSchedulesAdapter(displayCourses)
+                    binding.dashboardSchedulesUpcoming.apply {
+                        layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                        adapter = dashSchedulesAdapter
+                        itemAnimator = DefaultItemAnimator()
+                        val snapHelper = PagerSnapHelper()
+                        snapHelper.attachToRecyclerView(this)
+                        addItemDecoration(SpaceItemDecoration(30))
+                        setupIndicators(dashSchedulesAdapter.itemCount)
+                        setCurrentIndicator(0)
+
+                        addOnScrollListener(object : RecyclerView.OnScrollListener() {
+                            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                                val layoutManager = recyclerView.layoutManager as LinearLayoutManager
+                                val position = layoutManager.findFirstVisibleItemPosition()
+                                setCurrentIndicator(position)
+                            }
+                        })
+                    }
+                }
+
+
+                // Set refresh ulang setiap 1 menit
+                refreshHandler.postDelayed(this, 1000)
+            }
+        }
+
+        // Jalankan pertama kali
+        refreshHandler.post(refreshRunnable)
+    }
+
+    override fun onDestroyView() {
+        stopAutoRefresh()
+        super.onDestroyView()
+        if (::refreshHandler.isInitialized) {
+            refreshHandler.removeCallbacks(refreshRunnable)
         }
     }
 
@@ -331,8 +373,4 @@ class DashboardFragment : Fragment() {
             .show()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }

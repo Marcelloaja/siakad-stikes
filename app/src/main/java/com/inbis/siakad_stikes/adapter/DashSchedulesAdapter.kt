@@ -7,6 +7,12 @@ import com.inbis.siakad_stikes.data.OnGoingData
 import com.inbis.siakad_stikes.databinding.ItemUpcomingSchedulesDashBinding
 
 class DashSchedulesAdapter(private var dashCourseList: List<OnGoingData>) : RecyclerView.Adapter<DashSchedulesAdapter.DashSchedulesViewHolder>() {
+
+    fun updateData(newCourses: List<OnGoingData>) {
+        dashCourseList = newCourses
+        notifyDataSetChanged()
+    }
+
     inner class DashSchedulesViewHolder(private val binding: ItemUpcomingSchedulesDashBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(course: OnGoingData) {
             binding.dashJadwalCourseNameCard.text = course.courseName
