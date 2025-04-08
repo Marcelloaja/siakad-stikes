@@ -162,7 +162,6 @@ class DashboardFragment : Fragment() {
         }
     }
 
-
     private fun setCurrentIndicator(index: Int) {
         val childCount = indicatorLayout.childCount
         for (i in 0 until childCount) {
@@ -174,7 +173,6 @@ class DashboardFragment : Fragment() {
             }
         }
     }
-
 
     private fun showLogoutConfirmation() {
         AlertDialog.Builder(requireContext())
