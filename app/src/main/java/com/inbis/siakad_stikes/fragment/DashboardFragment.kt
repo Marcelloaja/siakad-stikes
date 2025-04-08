@@ -16,11 +16,13 @@ import com.inbis.siakad_stikes.adapter.DashSchedulesAdapter
 import com.inbis.siakad_stikes.adapter.NewsAdapter
 import com.inbis.siakad_stikes.adapter.ResumeAdapter
 import com.inbis.siakad_stikes.auth.IntroActivity
-import com.inbis.siakad_stikes.auth.LoginActivity
 import com.inbis.siakad_stikes.data.NewsData
 import com.inbis.siakad_stikes.data.OnGoingData
 import com.inbis.siakad_stikes.data.ResumeData
 import com.inbis.siakad_stikes.databinding.FragmentDashboardBinding
+import android.widget.ImageView
+import android.widget.LinearLayout
+import androidx.recyclerview.widget.RecyclerView
 
 class DashboardFragment : Fragment() {
 
@@ -30,6 +32,7 @@ class DashboardFragment : Fragment() {
     private lateinit var newsAdapter: NewsAdapter
     private lateinit var resumeAdapter: ResumeAdapter
     private lateinit var dashSchedulesAdapter: DashSchedulesAdapter
+    private lateinit var indicatorLayout: LinearLayout
 
     private val newsAll = listOf(
         NewsData("Dr. Sutomo", "Pencairan uang asisten dosen 2024", "03 Januari, 2025"),
@@ -149,6 +152,8 @@ class DashboardFragment : Fragment() {
             popup.show()
         }
 
+        indicatorLayout = binding.indicatorLayout  // <--- Tambahin inisialisasi ini
+
         setupNewsRecycler()
         setupAttendanceRecycler()
         setupDashSchedulesRecycler()
@@ -157,13 +162,55 @@ class DashboardFragment : Fragment() {
     private fun setupDashSchedulesRecycler() {
         dashSchedulesAdapter = DashSchedulesAdapter(allDashCourse)
         binding.dashboardSchedulesUpcoming.apply {
-
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             isNestedScrollingEnabled = false
             adapter = dashSchedulesAdapter
 
             val spaceDecoration = SpaceItemDecoration(15)
             addItemDecoration(spaceDecoration)
+
+            // Setup indicator
+            setupIndicators(allDashCourse.size)
+            setCurrentIndicator(0)
+
+            // Update indicator pas scroll
+            addOnScrollListener(object : RecyclerView.OnScrollListener() {
+                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                    val layoutManager = recyclerView.layoutManager as LinearLayoutManager
+                    val position = layoutManager.findFirstVisibleItemPosition()
+                    setCurrentIndicator(position)
+                }
+            })
+        }
+    }
+
+    private fun setupIndicators(count: Int) {
+        val indicators = arrayOfNulls<ImageView>(count)
+        val layoutParams = LinearLayout.LayoutParams(
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
+        layoutParams.setMargins(8, 0, 8, 0)
+
+        indicatorLayout.removeAllViews()
+
+        for (i in indicators.indices) {
+            indicators[i] = ImageView(requireContext())
+            indicators[i]?.setImageResource(R.drawable.dot_inactive)  // bulatan non-aktif
+            indicators[i]?.layoutParams = layoutParams
+            indicatorLayout.addView(indicators[i])
+        }
+    }
+
+    private fun setCurrentIndicator(index: Int) {
+        val childCount = indicatorLayout.childCount
+        for (i in 0 until childCount) {
+            val imageView = indicatorLayout.getChildAt(i) as ImageView
+            if (i == index) {
+                imageView.setImageResource(R.drawable.dot_active) // bulatan aktif
+            } else {
+                imageView.setImageResource(R.drawable.dot_inactive) // bulatan non-aktif
+            }
         }
     }
 
