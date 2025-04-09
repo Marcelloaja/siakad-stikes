@@ -14,14 +14,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.inbis.siakad_stikes.adapter.HourButtonAdapter
 import com.inbis.siakad_stikes.adapter.OnGoingCourseAdapter
 import com.inbis.siakad_stikes.databinding.ActivityMainBinding
-import com.inbis.siakad_stikes.main.JadwalActivity
 import com.inbis.siakad_stikes.data.HourItemData
 import com.inbis.siakad_stikes.data.OnGoingData
 import com.inbis.siakad_stikes.fragment.DashboardFragment
 import com.inbis.siakad_stikes.fragment.OnGoingSchedulesFragment
 import com.inbis.siakad_stikes.fragment.ProfileFragment
 import com.inbis.siakad_stikes.fragment.RiwayatFragment
-import com.inbis.siakad_stikes.main.ScanActivity
 import com.inbis.siakad_stikes.main.ScannerActivity
 
 class MainActivity : AppCompatActivity() {
@@ -55,7 +53,7 @@ class MainActivity : AppCompatActivity() {
                 "HomeFragment" -> replaceFragment(DashboardFragment(), "HomeFragment", false)
                 "ScheduleFragment" -> replaceFragment(OnGoingSchedulesFragment(), "ScheduleFragment", false)
                 "ScanFragment" -> {
-                    val intent = Intent(this, ScanActivity::class.java)
+                    val intent = Intent(this, ScannerActivity::class.java)
                     startActivity(intent)
                 }
                 "RiwayatFragment" -> replaceFragment(RiwayatFragment(), "RiwayatFragment", false)
