@@ -55,7 +55,7 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupResumeRecyclerView()
-        setupNumberPicker()
+//        setupNumberPicker()
         setupSettingButton()
     }
 
@@ -67,42 +67,42 @@ class ProfileFragment : Fragment() {
         }
     }
 
-    private fun setupNumberPicker() {
-        binding.numberPickerSemester.apply {
-            minValue = 1
-            maxValue = semesterList.size
-            displayedValues = semesterList
-            wrapSelectorWheel = true
-            isEnabled = false
+//    private fun setupNumberPicker() {
+//        binding.numberPickerSemester.apply {
+//            minValue = 1
+//            maxValue = semesterList.size
+//            displayedValues = semesterList
+//            wrapSelectorWheel = true
+//            isEnabled = false
+//
+//            updatePickerStyle(value) // Set awal
+//
+//            setOnValueChangedListener { _, _, newVal ->
+//                updatePickerStyle(newVal)
+//                resetSelectionTimeout(newVal)
+//            }
+//        }
+//    }
 
-            updatePickerStyle(value) // Set awal
-
-            setOnValueChangedListener { _, _, newVal ->
-                updatePickerStyle(newVal)
-                resetSelectionTimeout(newVal)
-            }
-        }
-    }
-
-    private fun updatePickerStyle(selectedIndex: Int) {
-        try {
-            val count = binding.numberPickerSemester.childCount
-            for (i in 0 until count) {
-                val view = binding.numberPickerSemester.getChildAt(i)
-                if (view is TextView) {
-                    if (view.text.toString() == semesterList[selectedIndex - 1]) {
-                        view.setTypeface(null, Typeface.BOLD)
-                        view.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
-                    } else {
-                        view.setTypeface(null, Typeface.NORMAL)
-                        view.setTextColor(ContextCompat.getColor(requireContext(), R.color.new_grey))
-                    }
-                }
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-    }
+//    private fun updatePickerStyle(selectedIndex: Int) {
+//        try {
+//            val count = binding.numberPickerSemester.childCount
+//            for (i in 0 until count) {
+//                val view = binding.numberPickerSemester.getChildAt(i)
+//                if (view is TextView) {
+//                    if (view.text.toString() == semesterList[selectedIndex - 1]) {
+//                        view.setTypeface(null, Typeface.BOLD)
+//                        view.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+//                    } else {
+//                        view.setTypeface(null, Typeface.NORMAL)
+//                        view.setTextColor(ContextCompat.getColor(requireContext(), R.color.new_grey))
+//                    }
+//                }
+//            }
+//        } catch (e: Exception) {
+//            e.printStackTrace()
+//        }
+//    }
 
     private fun setupSettingButton() {
         binding.btnSetting.setOnClickListener {
@@ -111,15 +111,15 @@ class ProfileFragment : Fragment() {
         }
     }
 
-    private fun resetSelectionTimeout(selectedValue: Int) {
-        selectionRunnable?.let { handler.removeCallbacks(it) }
-
-        selectionRunnable = Runnable {
-            binding.numberPickerSemester.value = selectedValue
-            updatePickerStyle(selectedValue)
-        }
-        handler.postDelayed(selectionRunnable!!, 3000)
-    }
+//    private fun resetSelectionTimeout(selectedValue: Int) {
+//        selectionRunnable?.let { handler.removeCallbacks(it) }
+//
+//        selectionRunnable = Runnable {
+//            binding.numberPickerSemester.value = selectedValue
+//            updatePickerStyle(selectedValue)
+//        }
+//        handler.postDelayed(selectionRunnable!!, 3000)
+//    }
 
     override fun onDestroyView() {
         super.onDestroyView()
