@@ -117,31 +117,26 @@ class DashboardFragment : Fragment() {
     )
 
     private val allDashCourse = listOf(
-        OnGoingData(
-            "Pengadaan Tanggulangan Kesehatan Masyarakat",
-            "Dr. Adi Nugroho",
-            "Ruang Auditorium",
-            "Senin",
-            "08:00 - 10:00"
-        ),
-        OnGoingData("Basis Data", "Dr. Rina Sari", "Ruang Auditorium", "Selasa", "10:00 - 12:00"),
-        OnGoingData(
-            "Jaringan Komputer",
-            "Dr. Budi Santoso",
-            "Ruang Auditorium",
-            "Rabu",
-            "13:00 - 15:00"
-        ),
-        OnGoingData(
-            "Kecerdasan Buatan",
-            "Dr. Siti Rahmah",
-            "Ruang Auditorium",
-            "Kamis",
-            "15:00 - 17:00"
-        ),
-        OnGoingData("P2MW 2025", "Dr. Ignasius Tio ", "Ruang Auditorium", "Jumat", "15:00 - 17:00"),
+        OnGoingData("Pemrograman Mobile", "Dr. Adi Nugroho", "Ruang Auditorium", "Senin", "08:00 - 10:00"),
+        OnGoingData("Basis Data", "Dr. Rina Sari", "Ruang Auditorium", "Selasa", "06:00 - 08:00"),
+        OnGoingData("Jaringan Komputer", "Dr. Budi Santoso", "Ruang Auditorium", "Rabu", "07:00 - 08:49"),
+        OnGoingData("Kecerdasan Buatan", "Dr. Siti Rahmah", "Ruang Auditorium", "Kamis", "09:00 - 10:00"),
+        OnGoingData("Basis Data", "Dr. Rina Sari", "Ruang Auditorium", "Jumat", "10:00 - 12:00"),
+        OnGoingData("Jaringan Komputer", "Dr. Budi Santoso", "Ruang Auditorium", "Sabtu", "13:00 - 15:00"),
+        OnGoingData("Algoritma dan Struktur Data", "Dr. Ahmad Fauzi", "Ruang 101", "Senin", "11:00 - 13:00"),
+        OnGoingData("Sistem Operasi", "Dr. Dian Pratama", "Ruang 102", "Selasa", "09:00 - 11:00"),
+        OnGoingData("Pemrograman Web", "Dr. Eka Wijaya", "Ruang 103", "Rabu", "11:00 - 12:00"),
+        OnGoingData("Machine Learning", "Dr. Fitriani", "Ruang 104", "Kamis", "12:00 - 14:00"),
+        OnGoingData("Keamanan Jaringan", "Dr. Gita Putri", "Ruang 105", "Jumat", "13:00 - 14:00"),
+        OnGoingData("Rekayasa Perangkat Lunak", "Dr. Joko Susilo", "Ruang 201", "Senin", "13:30 - 14:30"),
+        OnGoingData("Basis Data Lanjut", "Dr. Kartika Dewi", "Ruang 202", "Selasa", "11:30 - 12:30"),
+        OnGoingData("Jaringan Nirkabel", "Dr. Lina Hartati", "Ruang 203", "Rabu", "13:30 - 15:30"),
+        OnGoingData("Deep Learning", "Dr. Mulyadi", "Ruang 204", "Kamis", "15:30 - 17:30"),
+        OnGoingData("Pemrograman Berorientasi Objek", "Dr. Rudi Hartono", "Ruang 301", "Senin", "15:30 - 17:30"),
+        OnGoingData("Manajemen Proyek TI", "Dr. Sari Dewi", "Ruang 302", "Selasa", "13:30 - 15:30"),
+        OnGoingData("Komputasi Paralel", "Dr. Taufik Hidayat", "Ruang 303", "Rabu", "15:30 - 17:30"),
+        OnGoingData("Blockchain", "Dr. Yudi Pratama", "Ruang 307", "Minggu", "15:30 - 17:30")
     )
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
