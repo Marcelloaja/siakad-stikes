@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.util.TypedValue
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -81,6 +82,13 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
+        val metrics = resources.displayMetrics
+        val sizeInDp = if (metrics.widthPixels > 1080) 32 else 20
+        binding.navView.itemIconSize = TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_DIP, sizeInDp.toFloat(), metrics
+        ).toInt()
+
     }
 
     private fun replaceFragment(fragment: Fragment, tag: String, addToBackStack: Boolean) {

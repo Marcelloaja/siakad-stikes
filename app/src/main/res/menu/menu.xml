@@ -12,8 +12,11 @@
         android:title="Jadwal"/>
 
     <item
+        android:id="@+id/navigation_empty"
         android:enabled="false"
-        android:checkable="false"/>
+        android:icon="@android:color/transparent"
+        android:title=""
+        android:checkable="false" />
 
     <item
         android:id="@+id/navigation_riwayat"

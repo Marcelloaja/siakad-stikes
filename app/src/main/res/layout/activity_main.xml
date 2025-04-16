@@ -2,7 +2,6 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipChildren="false"
@@ -12,37 +11,44 @@
     <FrameLayout
         android:id="@+id/navhost"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_marginBottom="80dp" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/nav"
         android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom"
+        android:backgroundTint="@android:color/white"
+        app:fabAlignmentMode="center"
+        app:fabCradleMargin="8dp"
+        app:fabCradleRoundedCornerRadius="36dp"
+        app:fabCradleVerticalOffset="0dp"
+        app:hideOnScroll="false" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:backgroundTint="@color/white"
-        app:fabCradleMargin="10dp"
-        app:fabCradleRoundedCornerRadius="20dp"
-        app:fabCradleVerticalOffset="10dp">
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/nav_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            app:layout_anchor="@+id/nav"
-            app:layout_anchorGravity="center"
-            app:menu="@menu/menu" />
-
-    </com.google.android.material.bottomappbar.BottomAppBar>
+        android:background="@android:color/transparent"
+        app:menu="@menu/menu"
+        app:itemIconSize="20dp"
+        app:labelVisibilityMode="labeled" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#4FA5E2"
-        android:importantForAccessibility="no"
         android:src="@drawable/mynaui_qr"
+        android:backgroundTint="#4FA5E2"
+        android:layout_marginBottom="0dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:translationZ="8dp"
         app:layout_anchor="@id/nav"
-        app:layout_anchorGravity="center" />
+        app:layout_anchorGravity="center"
+        app:tint="@android:color/white"
+        app:maxImageSize="24dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
